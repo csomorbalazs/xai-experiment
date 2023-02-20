@@ -92,8 +92,19 @@ const frequencyLikert7 = [
 ];
 
 export const preQuestionnaire = {
+  firstPageIsStarted: true,
   showPageNumbers: false,
   pages: [
+    {
+      elements: [
+        {
+          type: "html",
+          html: `
+          <h1>XAI Experiment</h1>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in vehicula nulla. Praesent nec magna vulputate, venenatis justo vel, posuere eros. Vestibulum ac nibh lacus. Aenean et urna ac purus feugiat faucibus a in felis. Sed sed lorem quis ligula dapibus luctus. Nunc ipsum sem, efficitur ac ipsum non, pretium lacinia quam.</div>`,
+        },
+      ],
+    },
     {
       title: "Expectations",
       description:
@@ -192,7 +203,8 @@ export const preQuestionnaire = {
         {
           type: "matrix",
           name: "sources",
-          title: "How often do you use these sources to learn about different topics?",
+          title:
+            "How often do you use these sources to learn about different topics?",
           alternateRows: true,
           hideNumber: true,
           columns: frequencyLikert7,
