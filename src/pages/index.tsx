@@ -10,7 +10,7 @@ import NewsItemComponent from "@/components/NewsItemComponent";
 const Home = () => {
   // const survey = new Model(preQuestionnaire);
 
-  const newsItems: NewsItem[] = data;
+  const newsItems: any[] = data; // TODO: use proper type
 
   console.log(newsItems[0].content);
 
