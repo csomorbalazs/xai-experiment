@@ -2,17 +2,17 @@ import Head from "next/head";
 import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
-import { preQuestionnaire } from "@/data/pre-questionnaire";
+import { questionnaire } from "@/data/questionnaire";
 import data from "@/data/news-items.json";
-import NewsItem from "@/model/news-item";
-import NewsItemComponent from "@/components/NewsItemComponent";
+import { registerMyQuestion } from "@/components/NewsItemQuestion";
 
 const Home = () => {
-  // const survey = new Model(preQuestionnaire);
+  registerMyQuestion();
+  const survey = new Model(questionnaire);
 
-  const newsItems: any[] = data; // TODO: use proper type
-
-  console.log(newsItems[0].content);
+  survey.onComplete.add((result) => {
+    alert(JSON.stringify(result.data));
+  });
 
   return (
     <>
@@ -22,8 +22,14 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* <Survey model={survey} /> */}
-        <NewsItemComponent newsItem={newsItems[0]} xaiFeature={"none"} />
+        <Survey
+          model={survey}
+          css={{
+            ".sd-action-bar": {
+              justifyContent: "end",
+            },
+          }}
+        />
       </main>
     </>
   );
