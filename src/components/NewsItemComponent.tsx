@@ -1,6 +1,7 @@
 import NewsItem from "@/model/news-item";
 import { createTheme, Slider, ThemeProvider } from "@mui/material";
 import { useEffect, useState } from "react";
+import ThuthfulnessSlider from "./TruthfulnessSlider";
 
 const NewsItemComponent = ({
   newsItem,
@@ -25,18 +26,47 @@ const NewsItemComponent = ({
   return (
     <section
       css={{
-        width: "100%",
-        display: "flex",
         fontFamily: "Inter, sans-serif",
         color: "#1D1D1F",
         whiteSpace: "normal",
+
+        display: "grid",
+        gridTemplateColumns: "minmax(58%, 1fr) minmax(380px, 1fr)",
+        gap: "32px",
+
+        "@media (max-width: 1100px)": {
+          gridTemplateColumns: "1fr",
+        },
+
+        ".container": {
+          backgroundColor: "#FBFBFB",
+          borderRadius: "8px",
+          padding: "20px",
+          minWidth: "380px",
+
+          h1: {
+            fontSize: "18px",
+            fontWeight: 600,
+          },
+
+          h2: {
+            fontSize: "14px",
+            color: "#4F4F4F",
+            fontWeight: 600,
+            marginBottom: "8px",
+          },
+
+          ".line": {
+            width: "100%",
+            height: "1px",
+            backgroundColor: "#E5E5E5",
+            margin: "20px 0",
+          },
+        },
       }}
     >
       <article
         css={{
-          width: "60%",
-          maxWidth: "60%",
-          minWidth: "60%",
           h1: {
             fontSize: "30px",
             marginBottom: "8px",
@@ -88,42 +118,20 @@ const NewsItemComponent = ({
       </article>
       <aside
         css={{
-          width: "40%",
-          marginLeft: "20px",
           display: "flex",
           flexDirection: "column",
           gap: "40px",
-
-          h2: {
-            fontSize: "14px",
-            color: "#4F4F4F",
-            fontWeight: 600,
-            marginBottom: "8px",
-          },
-
-          section: {
-            backgroundColor: "#F5F5F5",
-            borderRadius: "8px",
-            height: "fit-content",
-            padding: "20px",
-            border: "2px solid transparent",
-
-            h1: {
-              fontSize: "18px",
-              fontWeight: 600,
-            },
-
-            ".line": {
-              width: "100%",
-              height: "1px",
-              backgroundColor: "#E5E5E5",
-              margin: "20px 0",
-            },
-          },
         }}
       >
         {xaiFeatures !== "none" && (
-          <section>
+          <section
+            className="container"
+            css={{
+              height: "100%",
+              border: "1px solid #E5E5E5",
+              background: "transparent",
+            }}
+          >
             <h1>AI System prediction</h1>
             <div className="line"></div>
             <div
@@ -133,165 +141,43 @@ const NewsItemComponent = ({
               }}
             >
               <h2>Truthfulness</h2>
-              <ThuthfulnessComponent
+              <ThuthfulnessSlider
                 initialScore={newsItem.xaiFeatures.truthfulness}
               />
             </div>
           </section>
         )}
-        {isInput && (
-          <section
-            css={{
-              borderColor: "#19B394 !important",
-            }}
-          >
-            <h1>Your rating</h1>
-            <div className="line"></div>
-            <div
-              css={{
-                display: "flex",
-                gap: "8px",
-              }}
-            >
-              <h2>Truthfulness</h2>
-              <ThuthfulnessComponent
-                initialScore={ratingValue}
-                interactive
-                onChange={(score) => {
-                  setRatingValue(score);
-                  onRatingChange(score);
-                }}
-              />
-            </div>
-          </section>
-        )}
       </aside>
-    </section>
-  );
-};
-
-const ThuthfulnessComponent = ({
-  initialScore,
-  interactive = false,
-  onChange,
-}: {
-  initialScore: number;
-  interactive?: boolean;
-  onChange?: (score: number) => void;
-}) => {
-  return (
-    <>
-      <div
-        css={{
-          width: "100%",
-          height: "fit-content",
-          display: "flex",
-          gap: "1px",
-          position: "relative",
-          ".part": {
-            width: "100%",
-            height: "14px",
-            position: "relative",
-
-            "&:nth-of-type(1)": {
-              borderRadius: "6px 0 0 6px",
-              background: "#595959",
-            },
-
-            "&:nth-of-type(2)": {
-              background: "#7F7F7F",
-            },
-
-            "&:nth-of-type(3)": {
-              background: "#A5A5A5",
-            },
-
-            "&:nth-of-type(4)": {
-              background: "#BFBFBF",
-            },
-
-            "&:nth-of-type(5)": {
-              borderRadius: "0 6px 6px 0",
-              background: "#D8D8D8",
-            },
-
-            "> label": {
-              fontSize: "10px",
-              position: "absolute",
-              top: "20px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              textAlign: "center",
-              // don't break line
-              whiteSpace: "nowrap",
-            },
-          },
-        }}
-      >
-        <div className="part 1">
-          <label>Fake</label>
-        </div>
-        <div className="part 2">
-          <label>Rather fake</label>
-        </div>
-        <div className="part 3">
-          <label>Neutral</label>
-        </div>
-        <div className="part 4">
-          <label>Rather true</label>
-        </div>
-        <div className="part 5">
-          <label>True</label>
-        </div>
+      {isInput && (
         <div
+          className="container"
           css={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            border: "1px solid #19B394",
+            flex: 1,
+            minWidth: "58%",
           }}
         >
-          <ThemeProvider
-            theme={createTheme({
-              palette: {
-                primary: {
-                  main: "#19B394",
-                },
-              },
-            })}
+          <h1>Your rating</h1>
+          <div className="line"></div>
+          <div
+            css={{
+              display: "flex",
+              gap: "8px",
+            }}
           >
-            <Slider
-              value={initialScore}
-              valueLabelDisplay="on"
-              color="primary"
-              valueLabelFormat={(value) => {
-                return `${value}%`;
-              }}
-              css={{
-                "& .MuiSlider-rail": {
-                  color: "transparent",
-                },
-                "& .MuiSlider-track": {
-                  color: "transparent",
-                },
-                "& .MuiSlider-valueLabel": {
-                  top: "-8px",
-                  backgroundColor: interactive ? "#19B394" : "#757575",
-                },
-              }}
-              disabled={!interactive}
-              onChange={(e, value) => {
-                onChange && onChange(value as number);
+            <h2>Truthfulness</h2>
+            <ThuthfulnessSlider
+              initialScore={ratingValue}
+              interactive
+              onChange={(score) => {
+                setRatingValue(score);
+                onRatingChange(score);
               }}
             />
-          </ThemeProvider>
+          </div>
         </div>
-      </div>
-    </>
+      )}
+    </section>
   );
 };
 

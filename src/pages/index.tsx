@@ -28,6 +28,10 @@ const Home = () => {
             ".sd-action-bar": {
               justifyContent: "end",
             },
+            ".sd-element": {
+              paddingLeft: "32px",
+              paddingRight: "32px",
+            },
           }}
         />
       </main>
