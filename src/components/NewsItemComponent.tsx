@@ -103,9 +103,6 @@ const NewsItemComponent = ({
         </div>
         <h1>{newsItem.title}</h1>
         <h2>{newsItem.subtitle}</h2>
-        <h3>
-          {newsItem.source} - {newsItem.publishingDate}
-        </h3>
         <div></div>
         <p
           dangerouslySetInnerHTML={{
@@ -144,6 +141,27 @@ const NewsItemComponent = ({
               <ThuthfulnessSlider
                 initialScore={newsItem.xaiFeatures.truthfulness}
               />
+            </div>
+            <div className="line"></div>
+            <div
+              css={{
+                display: "flex",
+              }}
+            >
+              <div
+                css={{
+                  flex: 1,
+                }}
+              >
+                <h2>Publishing date: </h2> {newsItem.publishingDate}
+              </div>
+              <div
+                css={{
+                  flex: 1,
+                }}
+              >
+                <h2>Source: </h2> {newsItem.source}
+              </div>
             </div>
           </section>
         )}
