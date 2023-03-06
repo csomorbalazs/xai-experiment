@@ -206,7 +206,7 @@ const NewsItemComponent = ({
                     justifyContent: "space-between",
                   }}
                 >
-                  <h2 css={{}}>Readability</h2>
+                  <h2>Readability</h2>
                   <div
                     css={{
                       display: "flex",
@@ -231,7 +231,7 @@ const NewsItemComponent = ({
                     }}
                   >
                     <div
-                      className={`level easy ${
+                      className={`level ${
                         newsItem.xaiFeatures.readability === "easy"
                           ? "selected"
                           : ""
@@ -244,7 +244,7 @@ const NewsItemComponent = ({
                       Easy
                     </div>
                     <div
-                      className={`level medium ${
+                      className={`level ${
                         newsItem.xaiFeatures.readability === "medium"
                           ? "selected"
                           : ""
@@ -254,7 +254,7 @@ const NewsItemComponent = ({
                       Medium
                     </div>
                     <div
-                      className={`level hard ${
+                      className={`level ${
                         newsItem.xaiFeatures.readability === "hard"
                           ? "selected"
                           : ""
@@ -315,6 +315,22 @@ const NewsItemComponent = ({
                     ))}
                   </div>
                 </div>
+              </>
+            )}
+            {xaiFeatures === "explanations" && (
+              <>
+                <div className="line"></div>
+                <h2>Natural language explanation</h2>
+                <blockquote
+                  css={{
+                    borderLeft: "6px solid #7F7F7F",
+                    padding: "8px",
+                    margin: "8px 0",
+                    backgroundColor: "#7F7F7F1A",
+                  }}
+                >
+                  {newsItem.xaiFeatures.naturalLanguageExplanation}
+                </blockquote>
               </>
             )}
           </section>
