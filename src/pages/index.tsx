@@ -24,12 +24,9 @@ const Home = () => {
         <Survey
           model={survey}
           css={{
+            "--sd-base-padding": "32px",
             ".sd-action-bar": {
               justifyContent: "end",
-            },
-            ".sd-element": {
-              paddingLeft: "32px",
-              paddingRight: "32px",
             },
           }}
         />
