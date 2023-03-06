@@ -30,9 +30,9 @@ const informationSeekingBehaviour = {
           name: "sources",
           title:
             "How often do you use these sources to learn about different topics?",
-          alternateRows: true,
           hideNumber: true,
           columns: frequencyLikert7,
+          alternateRows: true,
           rows: [
             { value: "newspaper", text: "Newspaper" },
             { value: "online-newspaper", text: "Online newspaper" },
@@ -71,6 +71,7 @@ const informationSeekingBehaviour = {
           name: "seriousness",
           hideNumber: true,
           columns: seriousnessLikert7,
+          alternateRows: true,
           rows: [
             {
               value: "source-seriousness",
@@ -85,6 +86,7 @@ const informationSeekingBehaviour = {
           name: "accuracy",
           hideNumber: true,
           columns: accuracyLikert7,
+          alternateRows: true,
           rows: [
             { value: "newspaper", text: "Newspaper" },
             { value: "online-newspaper", text: "Online newspaper" },
@@ -108,6 +110,7 @@ const informationSeekingBehaviour = {
             "How accessible is information about transparency and reliability of online sources for you?",
           hideNumber: true,
           columns: accessibilityLikert7,
+          alternateRows: true,
           rows: [
             {
               value: "accessibility-of-information-about-transparency",
@@ -121,6 +124,7 @@ const informationSeekingBehaviour = {
           name: "access",
           hideNumber: true,
           columns: frequencyLikert7,
+          alternateRows: true,
           rows: [
             { value: "personal-purchase", text: "By personal purchase" },
             { value: "google", text: "Google" },
@@ -135,6 +139,7 @@ const informationSeekingBehaviour = {
           name: "comprehensive-information",
           hideNumber: true,
           columns: importanceLikert7,
+          alternateRows: true,
           rows: [
             {
               value: "comprehensive-information",
@@ -148,6 +153,7 @@ const informationSeekingBehaviour = {
           name: "purpose",
           hideNumber: true,
           columns: frequencyLikert7,
+          alternateRows: true,
           rows: [
             { value: "keep-up-to-date", text: "Keep up-to-date" },
             { value: "general-awareness", text: "General awareness" },

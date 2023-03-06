@@ -11,6 +11,7 @@ const systemEvaluation = {
       title: "Competence",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "This system supports decision making in Fake News detection very well.",
@@ -40,6 +41,7 @@ const systemEvaluation = {
       title: "Benevolence/Integrity",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "The AI system decides neutral.",
@@ -61,6 +63,7 @@ const systemEvaluation = {
       title: "Transparency",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "I understand why this system provided the decision it did.",
@@ -89,6 +92,7 @@ const systemEvaluation = {
       title: "Re-use",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "I know what will happen the next time I use the system because I understand how it behaves",
@@ -102,6 +106,7 @@ const systemEvaluation = {
       title: "Overall",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "I tend to trust this system , even though I have little or no knowledge of it",
@@ -119,6 +124,7 @@ const systemEvaluation = {
       title: "Explanation Usefulness",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "Using the system would increase my effectiveness in detecting Fake News.",
@@ -152,6 +158,7 @@ const systemEvaluation = {
       title: "Understandability",
       hideNumber: true,
       columns: agreementLikert7,
+      alternateRows: true,
       rows: [
         {
           text: "Overall, the presented explanations are comprehensible and help me with assessing the news articles.",

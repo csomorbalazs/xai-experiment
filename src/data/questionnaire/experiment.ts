@@ -66,6 +66,7 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
           hideNumber: true,
           titleLocation: "hidden",
           columns: agreementLikert7,
+          alternateRows: true,
           rows: [
             {
               text: "The system classified the news items correctly.",
