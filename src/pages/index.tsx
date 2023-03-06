@@ -3,7 +3,6 @@ import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import { questionnaire } from "@/data/questionnaire";
-import data from "@/data/news-items.json";
 import { registerMyQuestion } from "@/components/NewsItemQuestion";
 
 const Home = () => {

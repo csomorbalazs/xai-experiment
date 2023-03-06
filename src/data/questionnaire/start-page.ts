@@ -5,7 +5,11 @@ const startPage = {
       html: `
         <h1>XAI Experiment</h1>
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus metus vitae libero fringilla ornare. Suspendisse ac nisl aliquet turpis finibus laoreet quis eu tortor. Cras iaculis vitae ipsum quis blandit. Proin viverra orci sit amet odio egestas, eu malesuada nunc facilisis. Mauris consectetur auctor mattis. Proin in consectetur neque. Phasellus eu purus et velit venenatis tristique. In mattis et lorem eu iaculis. Aenean vehicula risus vitae quam cursus porttitor. Sed varius urna felis, in laoreet sapien suscipit in. Curabitur in nunc sit amet lectus dapibus pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Welcome to the "XAI Evaluation" Experiment.
+        The experiment is conducted by the Technical University of Berlin at the Quality and Usability Lab. The goal of the study is to gain knowledge about the usefulness of XAI features in fake news detection.
+        The study consists of several questionnaires and an experimental part. First, you are asked to answer a few questions about your general expectations an attitudes regarding AI and about your information literacy and information seeking behavior. 
+        In the experimental part, you need to evaluate different news articles and the displayed XAI Features according to given criteria. 
+        The experiment will take approximately ? minutes to complete.
         </p>
     `,
     },

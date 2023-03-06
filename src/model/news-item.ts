@@ -2,17 +2,16 @@ interface NewsItem {
   id: number;
   title: string;
   subtitle?: string;
-  category: string;
-  source: string;
-  publishingDate: string;
   content: string;
+  source: string;
+  category?: string;
+  publishingDate: string;
   label: "fake" | "true";
   xaiFeatures: {
     truthfulness: number;
-    labeledContent: string;
-    readability: number;
+    readability: "easy" | "medium" | "hard";
+    highlightedContent: string;
     naturalLanguageExplanation: string;
-    sentiment: string;
   };
 }
 

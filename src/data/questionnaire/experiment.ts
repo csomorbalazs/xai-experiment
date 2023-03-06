@@ -2,6 +2,8 @@ import newsItems from "@/data/news-items.json";
 import { agreementLikert7 } from "@/helper/likert-scales";
 import NewsItem from "@/model/news-item";
 
+const XAI_FEATURES = "salient";
+
 const getPagesForNewsItem = (newsItem: NewsItem) => {
   return [
     {
@@ -31,7 +33,7 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
-          xaiFeatures: "basic",
+          xaiFeatures: XAI_FEATURES,
           isInput: false,
         },
       ],
@@ -47,7 +49,7 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
-          xaiFeatures: "basic",
+          xaiFeatures: XAI_FEATURES,
           isInput: true,
         },
       ],
