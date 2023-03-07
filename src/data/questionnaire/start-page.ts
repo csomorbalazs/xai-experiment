@@ -3,15 +3,35 @@ const startPage = {
     {
       type: "html",
       html: `
-        <h1>XAI Experiment</h1>
-        <p>
-        Welcome to the "XAI Evaluation" Experiment.
-        The experiment is conducted by the Technical University of Berlin at the Quality and Usability Lab. The goal of the study is to gain knowledge about the usefulness of XAI features in fake news detection.
-        The study consists of several questionnaires and an experimental part. First, you are asked to answer a few questions about your general expectations an attitudes regarding AI and about your information literacy and information seeking behavior. 
-        In the experimental part, you need to evaluate different news articles and the displayed XAI Features according to given criteria. 
-        The experiment will take approximately ? minutes to complete.
-        </p>
+        <div>
+          <p>Welcome to the <b>"XAI Evaluation"</b> Experiment!</p>
+          </br>
+          <p>
+          The experiment is conducted by the <b>Technical University of Berlin at the Quality and Usability Lab</b>. The goal of the study is to gain knowledge about the usefulness of explainability approaches for the use case of fake news detection. Your task will be answering several questions and rate the <b>usefulness of different explanations</b> given by an <b>Artificial Intelligence</b> system for detecting fake news.
+          </p>
+          </br>
+          <p>
+          <b>Compensation:</b> you will receive <b>5,50€</b> when you complete the experiment.
+          </p>
+          <p>
+          <b>Duration:</b> approximately <b>30 minutes</b>
+          </p>
+          </br>
+          <p>
+          <b>Privacy Statement:</b> Your responses are collected in an anonymized form only. No backtracking to your person and the given responses is possible. You will be asked to create your personal code in the beginning based on several questions. In case you want to delete your responses you can request deleting within one month after participating in the experiment, by sending your personal code. The data gathered in this experiment will be used for scientific publications. In case you have any questions please contact: <a href="mailto:vera.schmitt@tu-berlin.de">vera.schmitt@tu-berlin.de</a>
+          </p>
+        </div>
     `,
+    },
+    {
+      type: "checkbox",
+      name: "confirm",
+      title:
+        "I have read and understood the information provided above, and I am willing to participate in the study.",
+      isRequired: true,
+      colCount: 0,
+      choices: ["Yes"],
+      hideNumber: true,
     },
   ],
 };
