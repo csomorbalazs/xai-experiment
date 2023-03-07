@@ -8,6 +8,18 @@
     ],
     "rewrites": [
       {
+        "source": "/basic",
+        "destination": "/basic.html"
+      },
+      {
+        "source": "/salient",
+        "destination": "/salient.html"
+      },
+      {
+        "source": "/natural-language",
+        "destination": "/natural-language.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
