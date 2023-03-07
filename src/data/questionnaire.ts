@@ -7,20 +7,23 @@ import systemEvaluation from "./system-evaluation";
 import postQuestionnaire from "./questionnaire/post-questionnaire";
 import demographics from "./questionnaire/demographics";
 import almostDone from "./questionnaire/almost-done";
+import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
-export const questionnaire = {
-  firstPageIsStarted: true,
-  showPageNumbers: true,
-  showProgressBar: "top",
-  pages: [
-    startPage,
-    expectations,
-    informationLiteracy,
-    ...informationSeekingBehaviour,
-    ...experimentPages,
-    almostDone,
-    ...systemEvaluation,
-    postQuestionnaire,
-    demographics,
-  ],
+export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
+  return {
+    firstPageIsStarted: true,
+    showPageNumbers: true,
+    showProgressBar: "top",
+    pages: [
+      startPage,
+      expectations,
+      informationLiteracy,
+      ...informationSeekingBehaviour,
+      ...experimentPages(xaiFeatures),
+      almostDone,
+      ...systemEvaluation,
+      postQuestionnaire,
+      demographics,
+    ],
+  };
 };

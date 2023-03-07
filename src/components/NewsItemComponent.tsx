@@ -1,4 +1,5 @@
 import NewsItem from "@/model/news-item";
+import { XAIFeatureLevel } from "@/model/xai-feature-level";
 import { useState } from "react";
 import ThuthfulnessSlider from "./TruthfulnessSlider";
 
@@ -9,7 +10,7 @@ const NewsItemComponent = ({
   onRatingChange = () => {},
 }: {
   newsItem: NewsItem;
-  xaiFeatures: "none" | "basic" | "salient" | "explanations";
+  xaiFeatures: XAIFeatureLevel;
   isInput: boolean;
   onRatingChange: (value: number) => void;
 }) => {

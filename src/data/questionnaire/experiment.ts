@@ -1,10 +1,12 @@
 import newsItems from "@/data/news-items.json";
 import { agreementLikert7 } from "@/helper/likert-scales";
 import NewsItem from "@/model/news-item";
+import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
-const XAI_FEATURES = "salient";
-
-const getPagesForNewsItem = (newsItem: NewsItem) => {
+const getPagesForNewsItem = (
+  newsItem: NewsItem,
+  xaiFeatures: XAIFeatureLevel
+) => {
   return [
     {
       title: "Evaluate news article",
@@ -33,7 +35,7 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
-          xaiFeatures: XAI_FEATURES,
+          xaiFeatures: xaiFeatures,
           isInput: false,
         },
       ],
@@ -49,7 +51,7 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
-          xaiFeatures: XAI_FEATURES,
+          xaiFeatures: xaiFeatures,
           isInput: true,
         },
       ],
@@ -95,8 +97,12 @@ const getPagesForNewsItem = (newsItem: NewsItem) => {
   ];
 };
 
-const experimentPages = [
-  ...newsItems.flatMap((newsItem) => getPagesForNewsItem(newsItem as any)),
-];
+const experimentPages = (xaiFeatures: XAIFeatureLevel) => {
+  return [
+    ...newsItems.flatMap((newsItem) =>
+      getPagesForNewsItem(newsItem as any, xaiFeatures)
+    ),
+  ];
+};
 
 export default experimentPages;
