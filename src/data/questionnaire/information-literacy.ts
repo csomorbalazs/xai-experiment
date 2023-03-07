@@ -1,9 +1,9 @@
 import { likelihoodLikert7 } from "@/helper/likert-scales";
 
 const informationLiteracy = {
-  title: "Information Literacy",
+  title: "General Background of Reading and Searching for News  ",
   description:
-    "Here in this part you should answer questions about your ability to deal with any information in a self-determined, sovereign, responsible and goal-oriented manner. Please answer as truthfully as possible.",
+    "Please answer the following questions as truthfully as possible.",
   elements: [
     {
       type: "matrix",

@@ -1,9 +1,10 @@
 import { agreementLikert7 } from "@/helper/likert-scales";
 
 const expectations = {
-  title: "Expectations",
+  title:
+    "Your General Thoughts about using Artificial Intelligence (AI) for Fake News Detection",
   description:
-    "In this part you should answer some questions about your expectation regarding AI based Fake News Detection",
+    "Please answer the following questions as truthfully as possible.",
   elements: [
     {
       type: "matrix",

@@ -6,6 +6,7 @@ import experimentPages from "./questionnaire/experiment";
 import systemEvaluation from "./system-evaluation";
 import postQuestionnaire from "./questionnaire/post-questionnaire";
 import demographics from "./questionnaire/demographics";
+import almostDone from "./questionnaire/almost-done";
 
 export const questionnaire = {
   firstPageIsStarted: true,
@@ -15,9 +16,10 @@ export const questionnaire = {
     startPage,
     expectations,
     informationLiteracy,
-    informationSeekingBehaviour,
+    ...informationSeekingBehaviour,
     ...experimentPages,
-    systemEvaluation,
+    almostDone,
+    ...systemEvaluation,
     postQuestionnaire,
     demographics,
   ],

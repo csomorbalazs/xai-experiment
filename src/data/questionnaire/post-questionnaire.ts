@@ -1,9 +1,10 @@
 import { agreementLikert7 } from "@/helper/likert-scales";
 
 const postQuestionnaire = {
-  title: "Post Questionnaire",
+  title:
+    "Final Questions about the Usefulness of the AI System and Explanations Given",
   description:
-    "Please answer the following questions after you have read the news article and analysed it with the AI system",
+    "In the following we ask you several questions about what you think about the AI system. Please answer as truthfully as possible.",
   elements: [
     {
       type: "boolean",

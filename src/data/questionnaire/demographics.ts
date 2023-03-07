@@ -1,7 +1,7 @@
 const demographics = {
-  title: "Demographics",
+  title: "Last Questions about Your Personality",
   description:
-    "Please answer the following questions to complete the survey, when you are done click complete",
+    "In the following we ask you several demographic questions, which will be stored anonymously only! Please answer as truthfully as possible.",
   elements: [
     {
       title: "To which age category do you belong?",
