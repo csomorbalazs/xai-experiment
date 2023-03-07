@@ -1,14 +1,8 @@
 import Head from "next/head";
 import "survey-core/defaultV2.min.css";
-import { Model } from "survey-core";
-import { Survey } from "survey-react-ui";
-import { questionnaire } from "@/data/questionnaire";
-import { registerMyQuestion } from "@/components/NewsItemQuestion";
+import Link from "next/link";
 
 const Home = () => {
-  // have 3 links to 3 different pages /natural-language, /salient, /basic
-  // each page has a different questionnaire
-  // each page has a different XAI feature level
   return (
     <>
       <Head>
@@ -40,13 +34,13 @@ const Home = () => {
           }}
         >
           <li>
-            <a href="/basic">Basic</a>
+            <Link href="/basic">Basic</Link>
           </li>
           <li>
-            <a href="/salient">Salient features</a>
+            <Link href="/salient">Salient features</Link>
           </li>
           <li>
-            <a href="/natural-language">Natural language explanation</a>
+            <Link href="/natural-language">Natural language explanation</Link>
           </li>
         </ul>
       </main>
