@@ -2,7 +2,7 @@ import Head from "next/head";
 import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
-import { questionnaire } from "@/data/questionnaire";
+import { questionnaire } from "@/questionnaire/questionnaire";
 import { registerMyQuestion } from "./NewsItemQuestion";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
@@ -28,6 +28,9 @@ const XAIQuestionnaire = ({ xaiFeature }: { xaiFeature: XAIFeatureLevel }) => {
             "--sd-base-padding": "32px",
             ".sd-action-bar": {
               justifyContent: "end",
+            },
+            ".sd-row": {
+              justifyContent: "center",
             },
           }}
         />

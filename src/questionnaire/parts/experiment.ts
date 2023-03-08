@@ -7,11 +7,14 @@ const getPagesForNewsItem = (
   newsItem: NewsItem,
   xaiFeatures: XAIFeatureLevel
 ) => {
+  const title = "Truthfulness Rating of News Items";
+  const description =
+    "Please read the news item carefully and adjust the truthfulness rating based on the information provided.";
+
   return [
     {
-      title: "Evaluate news article",
-      description:
-        "Carefully read the news article and evaluate the news article's truthfulness based on your own opinion, when you are done click next",
+      title,
+      description,
       elements: [
         {
           type: "newsitem",
@@ -25,9 +28,8 @@ const getPagesForNewsItem = (
       ],
     },
     {
-      title: "Analyse news article with AI",
-      description:
-        "Carefully analyse the news article and pay attention to the explanations provided by the AI system, when you are done click next",
+      title,
+      description,
       elements: [
         {
           type: "newsitem",
@@ -41,9 +43,8 @@ const getPagesForNewsItem = (
       ],
     },
     {
-      title: "Evaluate news article with AI",
-      description:
-        "Evaluate the news article's truthfulness again after seeing the AI system's explanation, when you are done click next",
+      title,
+      description,
       elements: [
         {
           type: "newsitem",
@@ -57,9 +58,8 @@ const getPagesForNewsItem = (
       ],
     },
     {
-      title: "Evaluate the system",
-      description:
-        "Evaluate the AI system based on the explanations it provided",
+      title,
+      description,
       elements: [
         {
           type: "matrix",

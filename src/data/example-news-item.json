@@ -1,0 +1,15 @@
+{
+  "id": 9999,
+  "title": "Even less than recommended amounts of caffeine while pregnant could impact your child’s life",
+  "content": "Starting the day with a hot cup of caffeinated coffee or tea may sound divine to some, but it could have negative impacts for the children of people who are pregnant, according to a new study. Children who were exposed to small amounts of caffeine before birth were found on average to be shorter than the children of people who did not consume caffeine while pregnant, according to the study published Monday in JAMA Network Open. Children of parents who consumed caffeine while they were in the womb were shown to be shorter in stature at age 4 than those whose parents did not — and the gap widened each year through age 8, according to lead author Dr. Jessica Gleason, a perinatal epidemiologist. For context, a mug of caffeinated tea typically has about 75 milligrams of caffeine, a mug of instant coffee has about 100 milligrams and a mug of filtered coffee has about 140 milligrams, according to the Cleveland Clinic. And even chocolate has about 31 milligrams of caffeine. But the differences found in the most recent study were found even in the children of parents who drank less than half a cup of coffee per day while pregnant — well below the current guidelines, Gleason said.",
+  "source": "CNN",
+  "category": "Health",
+  "publishingDate": "10\/31\/2022",
+  "label": "true",
+  "xaiFeatures": {
+    "truthfulness": 76,
+    "readability": "hard",
+    "highlightedContent": "Starting the day with a hot cup of caffeinated coffee or tea may sound divine to some, but  <mark>it could have <sentiment>negative</sentiment> impacts for the children of people who are pregnant </mark>, according to a new study. Children who were exposed to small amounts of caffeine before birth were <mark>found on average to be shorter than the children of people who did not consume caffeine while pregnant </mark>, according to the study published Monday in JAMA Network Open. Children of parents who consumed caffeine while they were in the womb were shown to <mark>be shorter in stature at age 4 than those whose parents did not — and the gap widened each year through age 8, according to lead author Dr. Jessica Gleason</mark>, a perinatal epidemiologist. For context, a mug of caffeinated tea typically has about 75 milligrams of caffeine, a mug of instant coffee has about 100 milligrams and a mug of filtered coffee has about 140 milligrams, according to the Cleveland Clinic. And even chocolate has about 31 milligrams of caffeine. But the differences found in the most recent study were found even in the children of parents who drank less than half a cup of coffee per day while pregnant — well below the current guidelines, Gleason said.",
+    "naturalLanguageExplanation": "It’s not clear whether this study effectively shows causation between maternal caffeine consumption and child height. The correlation observed in this study can be explained by the existence of a common cause of both caffeine consumption and growth restriction e.g., poverty, stress, and dietary factors."
+  }
+}

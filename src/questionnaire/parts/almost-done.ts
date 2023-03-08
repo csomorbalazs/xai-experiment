@@ -1,6 +1,7 @@
 const almostDone = {
   elements: [
     {
+      maxWidth: "900px",
       type: "html",
       html: `
     <b>Almost done!</b>

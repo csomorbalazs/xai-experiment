@@ -31,6 +31,8 @@ export class NewsItemQuestion extends SurveyElementBase<
       newsitem: NewsItem;
       xaiFeatures: "none" | "basic";
       isInput: boolean;
+      isTutorialMode: boolean;
+      tutorialTooltip: string;
       value: number;
     };
   },
@@ -64,6 +66,8 @@ export class NewsItemQuestion extends SurveyElementBase<
         onRatingChange={(value) => {
           this.question.value = value;
         }}
+        isTutorialMode={this.question.isTutorialMode}
+        tutorialTooltip={this.question.tutorialTooltip as any}
       />
     );
   }
@@ -71,7 +75,13 @@ export class NewsItemQuestion extends SurveyElementBase<
 
 Serializer.addClass(
   QUESTION_TYPE,
-  ["newsitem:object", "xaiFeatures:string", "isInput:boolean"],
+  [
+    "newsitem:object",
+    "xaiFeatures:string",
+    "isInput:boolean",
+    "isTutorialMode:boolean",
+    "tutorialTooltip:string",
+  ],
   () => new NewsItemQuestionModel(""),
   "question"
 );
