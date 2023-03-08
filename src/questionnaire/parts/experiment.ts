@@ -58,8 +58,9 @@ const getPagesForNewsItem = (
       ],
     },
     {
-      title,
-      description,
+      title: "Evaluate the system",
+      description:
+        "Evaluate the AI system based on the explanations it provided",
       elements: [
         {
           type: "matrix",
