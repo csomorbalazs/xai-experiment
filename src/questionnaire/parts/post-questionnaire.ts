@@ -94,11 +94,18 @@ const postQuestionnaire = {
       ],
     },
     {
+      title:
+        "You stated that the system is not helpful for your everyday work. Why?",
+      type: "text",
+      name: "why-not-helpful-for-everyday-work",
+      hideNumber: true,
+      visibleIf: "{expectations-after-exp.everyday-work-helpful-after-exp} < 4",
+    },
+    {
       title: "What functionality would be a good addition?",
       type: "text",
       name: "additional-functionality",
       hideNumber: true,
-      visibleIf: "{journalist}='Yes'",
     },
   ],
 };
