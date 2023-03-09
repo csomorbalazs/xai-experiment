@@ -9,6 +9,7 @@ import postQuestionnaire from "./parts/post-questionnaire";
 import demographics from "./parts/demographics";
 import almostDone from "./parts/almost-done";
 import tutorial from "./parts/tutorial";
+import youAreReady from "./parts/you-are-ready";
 
 export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
   return {
@@ -21,6 +22,7 @@ export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
       informationLiteracy,
       ...informationSeekingBehaviour,
       ...tutorial(xaiFeatures),
+      youAreReady,
       ...experimentPages(xaiFeatures),
       almostDone,
       ...systemEvaluation,
