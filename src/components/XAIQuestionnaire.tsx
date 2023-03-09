@@ -14,6 +14,22 @@ const XAIQuestionnaire = ({ xaiFeature }: { xaiFeature: XAIFeatureLevel }) => {
     alert(JSON.stringify(result.data));
   });
 
+  survey.onCurrentPageChanged.add((sender, options) => {
+    if (options.oldCurrentPage.name === "you-are-ready" && options.isPrevPage) {
+      sender.setValue("understand-task", undefined);
+      sender.currentPage = sender.getPageByName("tutorial-text");
+    }
+  });
+
+  survey.onValueChanged.add((sender, options) => {
+    if (options.name === "understand-task") {
+      if (options.value === "No") {
+        sender.setValue("understand-task", undefined);
+        sender.currentPage = sender.getPageByName("tutorial-text");
+      }
+    }
+  });
+
   return (
     <>
       <Head>

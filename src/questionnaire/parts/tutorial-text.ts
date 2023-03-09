@@ -2,6 +2,7 @@ import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
 const tutorialText = (xaiFeatures: XAIFeatureLevel) => {
   return {
+    name: "tutorial-text",
     elements: [
       {
         maxWidth: "900px",
