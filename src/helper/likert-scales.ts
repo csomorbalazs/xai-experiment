@@ -82,3 +82,13 @@ export const importanceLikert7 = getLikertScale(7, [
   "Not important",
   "Very not important",
 ]);
+
+export const satisfactionLikert7 = getLikertScale(7, [
+  "Completely satisfied",
+  "Satisfied",
+  "Somewhat satisfied",
+  "Neutral",
+  "Somewhat dissatisfied",
+  "Dissatisfied",
+  "Completely dissatisfied",
+]);

@@ -1,4 +1,4 @@
-import { agreementLikert7 } from "@/helper/likert-scales";
+import { agreementLikert7, satisfactionLikert7 } from "@/helper/likert-scales";
 
 const systemEvaluation = [
   {
@@ -79,9 +79,6 @@ const systemEvaluation = [
             text: "It is easy to follow what the system does.",
             value: "easy-to-follow-what-system-does",
           },
-          // {
-          //   text:"What is the degree of explanatory quality?", // TODO: what's the scale
-          // }
           {
             text: "I know what will happen the next time I use the system because I understand how it behaves",
             value: "know-what-will-happen-next-time",
@@ -93,6 +90,20 @@ const systemEvaluation = [
           {
             text: "My tendency to trust this system is high.",
             value: "tendency-to-trust-system-high",
+          },
+        ],
+      },
+      {
+        type: "matrix",
+        name: "transparency-2",
+        hideNumber: true,
+        columns: satisfactionLikert7,
+        alternateRows: true,
+        titleLocation: "hidden",
+        rows: [
+          {
+            text: "How satisfied are you with the explanatory quality?",
+            value: "satisfied-with-explanatory-quality",
           },
         ],
       },
