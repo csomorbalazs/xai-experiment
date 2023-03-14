@@ -26,7 +26,7 @@ export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
       ...experimentPages(xaiFeatures),
       almostDone,
       ...systemEvaluation,
-      postQuestionnaire,
+      postQuestionnaire(xaiFeatures),
       demographics,
     ],
   };
