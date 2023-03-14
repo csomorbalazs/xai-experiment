@@ -10,6 +10,7 @@ import demographics from "./parts/demographics";
 import almostDone from "./parts/almost-done";
 import tutorial from "./parts/tutorial";
 import youAreReady from "./parts/you-are-ready";
+import personalCode from "./parts/personal-code";
 
 export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
   return {
@@ -18,6 +19,7 @@ export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
     showProgressBar: "top",
     pages: [
       startPage,
+      personalCode,
       expectations,
       informationLiteracy,
       ...informationSeekingBehaviour,
