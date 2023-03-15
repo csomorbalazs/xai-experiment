@@ -1,14 +1,43 @@
 import { createTheme, Slider, ThemeProvider } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const ThuthfulnessSlider = ({
   initialScore,
   interactive = false,
   onChange,
 }: {
-  initialScore: number;
+  initialScore?: number;
   interactive?: boolean;
   onChange?: (score: number) => void;
 }) => {
+  const [score, setScore] = useState<number>(initialScore || 50);
+  const [isInitialState, setIsInitialState] = useState(!initialScore);
+
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const [sliderLeft, setSliderLeft] = useState(0);
+
+  // set the slider width and left position on mount
+  useEffect(() => {
+    const slider = document.querySelector(".MuiSlider-rail");
+    setSliderWidth(slider!.clientWidth);
+    setSliderLeft(slider!.getBoundingClientRect().left);
+  }, []);
+
+  // set the slider width and left position on resize
+  useEffect(() => {
+    const handleResize = () => {
+      const slider = document.querySelector(".MuiSlider-rail");
+      setSliderWidth(slider!.clientWidth);
+      setSliderLeft(slider!.getBoundingClientRect().left);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div
@@ -95,7 +124,7 @@ const ThuthfulnessSlider = ({
             })}
           >
             <Slider
-              value={initialScore}
+              value={score}
               valueLabelDisplay="on"
               color="primary"
               valueLabelFormat={(value) => {
@@ -112,10 +141,32 @@ const ThuthfulnessSlider = ({
                   top: "-8px",
                   backgroundColor: interactive ? "#19B394" : "#757575",
                 },
+                // hide the thumb if score is not set and the slide is not hovered
+                "& .MuiSlider-thumb": {
+                  display: isInitialState ? "none" : "flex",
+                },
+
+                "&:hover .MuiSlider-thumb": {
+                  display: "flex",
+                },
               }}
               disabled={!interactive}
+              onMouseMove={(e) => {
+                if (!interactive || !isInitialState) return;
+
+                const mousePosition = e.clientX - sliderLeft;
+                const score = Math.round((mousePosition / sliderWidth) * 100);
+                setScore(score);
+              }}
+              onMouseLeave={() => {
+                if (!interactive) return;
+
+                setIsInitialState(false);
+                onChange && onChange(score);
+              }}
               onChange={(e, value) => {
-                onChange && onChange(value as number);
+                if (!interactive) return;
+                setScore(value as number);
               }}
             />
           </ThemeProvider>

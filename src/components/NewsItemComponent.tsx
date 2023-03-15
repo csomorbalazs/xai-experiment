@@ -20,8 +20,7 @@ const NewsItemComponent = ({
   isTutorialMode: boolean;
   tutorialTooltip: TutorialTooltipStep | null;
 }) => {
-  const DEFAULT_RATING = 50;
-  const [ratingValue, setRatingValue] = useState(DEFAULT_RATING);
+  const [ratingValue, setRatingValue] = useState<number | undefined>(undefined);
 
   const xaiHighlight = (content: string) => {
     return content
