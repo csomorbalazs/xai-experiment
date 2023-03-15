@@ -397,10 +397,10 @@ const NewsItemComponent = ({
                   <h2>Natural language explanation</h2>
                   <blockquote
                     css={{
-                      borderLeft: "6px solid #7F7F7F",
+                      borderLeft: "6px solid #FF6FFF",
                       padding: "8px",
                       margin: "8px 0",
-                      backgroundColor: "#7F7F7F1A",
+                      backgroundColor: "#FF6FFF1A",
                     }}
                   >
                     {newsItem.xaiFeatures.naturalLanguageExplanation}
