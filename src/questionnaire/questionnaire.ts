@@ -17,6 +17,19 @@ export const questionnaire = (
   newsItems: NewsItem[],
   xaiFeatures: XAIFeatureLevel
 ) => {
+  // check if experimentOnly is set to true in query parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const experimentOnly = urlParams.get("experimentOnly") === "true";
+
+  if (experimentOnly) {
+    return {
+      firstPageIsStarted: false,
+      showPageNumbers: true,
+      showProgressBar: "top",
+      pages: [...experimentPages(newsItems, xaiFeatures)],
+    };
+  }
+
   return {
     firstPageIsStarted: true,
     showPageNumbers: true,

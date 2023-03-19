@@ -26,7 +26,7 @@ const Home = () => {
             fontWeight: 600,
           }}
         >
-          Choose version
+          Full versions
         </h2>
         <ul
           css={{
@@ -34,13 +34,52 @@ const Home = () => {
           }}
         >
           <li>
-            <Link href="/basic">Basic</Link>
+            Basic: <Link href="/basic/group-1">Group 1</Link> -{" "}
+            <Link href="/basic/group-2">Group 2</Link>
           </li>
           <li>
-            <Link href="/salient">Salient features</Link>
+            Salient features: <Link href="/salient/group-1">Group 1</Link> -{" "}
+            <Link href="/salient/group-2">Group 2</Link>
           </li>
           <li>
-            <Link href="/natural-language">Natural language explanation</Link>
+            Natural language explanation:{" "}
+            <Link href="/explanations/group-1">Group 1</Link> -{" "}
+            <Link href="/explanations/group-2">Group 2</Link>
+          </li>
+        </ul>
+        <h2
+          css={{
+            fontSize: "22px",
+            fontWeight: 600,
+            marginTop: "32px",
+          }}
+        >
+          Experimental part only
+        </h2>
+        <ul
+          css={{
+            marginLeft: "16px",
+          }}
+        >
+          <li>
+            Basic:{" "}
+            <Link href="/basic/group-1?experimentOnly=true">Group 1</Link> -{" "}
+            <Link href="/basic/group-2?experimentOnly=true">Group 2</Link>
+          </li>
+          <li>
+            Salient features:{" "}
+            <Link href="/salient/group-1?experimentOnly=true">Group 1</Link> -{" "}
+            <Link href="/salient/group-2?experimentOnly=true">Group 2</Link>
+          </li>
+          <li>
+            Natural language explanation:{" "}
+            <Link href="/explanations/group-1?experimentOnly=true">
+              Group 1
+            </Link>{" "}
+            -{" "}
+            <Link href="/explanations/group-2?experimentOnly=true">
+              Group 2
+            </Link>
           </li>
         </ul>
       </main>
