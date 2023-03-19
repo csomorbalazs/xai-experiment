@@ -134,6 +134,7 @@ const ThuthfulnessSlider = ({
                 return `${value}%`;
               }}
               css={{
+                padding: "36px 0",
                 "& .MuiSlider-rail": {
                   color: "transparent",
                 },
