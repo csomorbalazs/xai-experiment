@@ -33,18 +33,18 @@ export class NewsItemQuestion extends SurveyElementBase<
       isInput: boolean;
       isTutorialMode: boolean;
       tutorialTooltip: string;
-      value: number;
+      value?: number;
     };
   },
   {
-    value: number;
+    value?: number;
   }
 > {
   constructor(props: any) {
     super(props);
 
     if (this.question.isInput) {
-      this.question.value = 50;
+      this.question.value = undefined;
     }
   }
 

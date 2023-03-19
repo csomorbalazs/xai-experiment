@@ -1,5 +1,5 @@
-import { createTheme, Slider, ThemeProvider } from "@mui/material";
-import { useEffect, useState } from "react";
+import { createTheme, debounce, Slider, ThemeProvider } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 
 const ThuthfulnessSlider = ({
   initialScore,
@@ -16,9 +16,11 @@ const ThuthfulnessSlider = ({
   const [sliderWidth, setSliderWidth] = useState(0);
   const [sliderLeft, setSliderLeft] = useState(0);
 
+  const sliderRef = useRef<HTMLDivElement>(null);
+
   // set the slider width and left position on mount
   useEffect(() => {
-    const slider = document.querySelector(".MuiSlider-rail");
+    const slider = sliderRef.current?.querySelector(".MuiSlider-rail");
     setSliderWidth(slider!.clientWidth);
     setSliderLeft(slider!.getBoundingClientRect().left);
   }, []);
@@ -26,7 +28,7 @@ const ThuthfulnessSlider = ({
   // set the slider width and left position on resize
   useEffect(() => {
     const handleResize = () => {
-      const slider = document.querySelector(".MuiSlider-rail");
+      const slider = sliderRef.current?.querySelector(".MuiSlider-rail");
       setSliderWidth(slider!.clientWidth);
       setSliderLeft(slider!.getBoundingClientRect().left);
     };
@@ -124,6 +126,7 @@ const ThuthfulnessSlider = ({
             })}
           >
             <Slider
+              ref={sliderRef}
               value={score}
               valueLabelDisplay="on"
               color="primary"
@@ -154,9 +157,12 @@ const ThuthfulnessSlider = ({
               onMouseMove={(e) => {
                 if (!interactive || !isInitialState) return;
 
-                const mousePosition = e.clientX - sliderLeft;
-                const score = Math.round((mousePosition / sliderWidth) * 100);
-                setScore(score);
+                // use debounce to prevent lag
+                debounce(() => {
+                  const mousePosition = e.clientX - sliderLeft;
+                  const score = Math.round((mousePosition / sliderWidth) * 100);
+                  setScore(score);
+                }, 5)();
               }}
               onMouseLeave={() => {
                 if (!interactive) return;
