@@ -5,10 +5,17 @@ import { Survey } from "survey-react-ui";
 import { questionnaire } from "@/questionnaire/questionnaire";
 import { registerMyQuestion } from "./NewsItemQuestion";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
+import NewsItem from "@/model/news-item";
 
-const XAIQuestionnaire = ({ xaiFeature }: { xaiFeature: XAIFeatureLevel }) => {
+const XAIQuestionnaire = ({
+  newsItems,
+  xaiFeature,
+}: {
+  newsItems: NewsItem[];
+  xaiFeature: XAIFeatureLevel;
+}) => {
   registerMyQuestion();
-  const survey = new Model(questionnaire(xaiFeature));
+  const survey = new Model(questionnaire(newsItems, xaiFeature));
 
   survey.onComplete.add((result) => {
     alert(JSON.stringify(result.data));

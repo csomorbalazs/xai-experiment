@@ -11,8 +11,12 @@ import almostDone from "./parts/almost-done";
 import tutorial from "./parts/tutorial";
 import youAreReady from "./parts/you-are-ready";
 import personalCode from "./parts/personal-code";
+import NewsItem from "@/model/news-item";
 
-export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
+export const questionnaire = (
+  newsItems: NewsItem[],
+  xaiFeatures: XAIFeatureLevel
+) => {
   return {
     firstPageIsStarted: true,
     showPageNumbers: true,
@@ -25,7 +29,7 @@ export const questionnaire = (xaiFeatures: XAIFeatureLevel) => {
       ...informationSeekingBehaviour,
       ...tutorial(xaiFeatures),
       youAreReady,
-      ...experimentPages(xaiFeatures),
+      ...experimentPages(newsItems, xaiFeatures),
       almostDone,
       ...systemEvaluation,
       postQuestionnaire(xaiFeatures),

@@ -1,4 +1,3 @@
-import newsItems from "@/data/news-items.json";
 import { agreementLikert7 } from "@/helper/likert-scales";
 import NewsItem from "@/model/news-item";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
@@ -98,7 +97,10 @@ const getPagesForNewsItem = (
   ];
 };
 
-const experimentPages = (xaiFeatures: XAIFeatureLevel) => {
+const experimentPages = (
+  newsItems: NewsItem[],
+  xaiFeatures: XAIFeatureLevel
+) => {
   return [
     ...newsItems.flatMap((newsItem) =>
       getPagesForNewsItem(newsItem as any, xaiFeatures)
