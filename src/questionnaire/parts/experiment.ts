@@ -57,6 +57,30 @@ const getPagesForNewsItem = (
       ],
     },
     {
+      title,
+      description,
+      elements: [
+        {
+          // multiple choice control question
+          type: "radiogroup",
+          name: `${newsItem.id}-control-question`,
+          title: newsItem.controlQuestion.question,
+          hideNumber: true,
+          choicesOrder: "random",
+          choices: [
+            {
+              value: "correct",
+              text: newsItem.controlQuestion.correctAnswer,
+            },
+            ...newsItem.controlQuestion.wrongAnswers.map((answer, i) => ({
+              value: `wrong-${i + 1}`,
+              text: answer,
+            })),
+          ],
+        },
+      ],
+    },
+    {
       title: "Evaluate the system",
       description:
         "Evaluate the AI system based on the explanations it provided",

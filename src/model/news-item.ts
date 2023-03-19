@@ -13,6 +13,11 @@ interface NewsItem {
     highlightedContent: string;
     naturalLanguageExplanation: string;
   };
+  controlQuestion: {
+    question: string;
+    correctAnswer: string;
+    wrongAnswers: string[];
+  };
 }
 
 export default NewsItem;
