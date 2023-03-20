@@ -171,6 +171,12 @@ const ThuthfulnessSlider = ({
                 setIsInitialState(false);
                 onChange && onChange(score);
               }}
+              onMouseUp={() => {
+                if (!interactive) return;
+
+                setIsInitialState(false);
+                onChange && onChange(score);
+              }}
               onChange={(e, value) => {
                 if (!interactive) return;
                 setScore(value as number);
