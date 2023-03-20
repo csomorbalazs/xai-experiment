@@ -14,8 +14,10 @@ const youAreReady = {
     {
       title:
         "I understand all components of the upcoming task and would like to start the credibility assessment of news items!",
-      type: "radiogroup",
-      choices: ["Yes", "No"],
+      type: "boolean",
+      renderAs: "radio",
+      valueTrue: "Yes",
+      valueFalse: "No",
       isRequired: true,
       name: "understand-task",
       hideNumber: true,
