@@ -20,6 +20,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <form id="submit-form" action="replaced"></form>
     </Html>
   );
 }

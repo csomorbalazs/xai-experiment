@@ -17,10 +17,6 @@ const XAIQuestionnaire = ({
   registerMyQuestion();
   const survey = new Model(questionnaire(newsItems, xaiFeature));
 
-  survey.onComplete.add((result) => {
-    alert(JSON.stringify(result.data));
-  });
-
   survey.onCurrentPageChanged.add((sender, options) => {
     if (options.oldCurrentPage.name === "you-are-ready" && options.isPrevPage) {
       sender.setValue("understand-task", undefined);
@@ -35,6 +31,35 @@ const XAIQuestionnaire = ({
         sender.currentPage = sender.getPageByName("tutorial-text");
       }
     }
+  });
+
+  survey.onComplete.add((result) => {
+    const submitForm = document.getElementById(
+      "submit-form"
+    ) as HTMLFormElement;
+
+    // add the survey data to the form one by one
+    for (const key in result.data) {
+      // if the data is an object, add each key-value pair as a hidden input
+      if (typeof result.data[key] === "object") {
+        for (const subKey in result.data[key]) {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = `${key}.${subKey}`;
+          input.value = result.data[key][subKey];
+          submitForm.appendChild(input);
+        }
+      } else {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = result.data[key];
+        submitForm.appendChild(input);
+      }
+    }
+
+    // submit the form
+    submitForm.submit();
   });
 
   return (
