@@ -180,7 +180,7 @@ const NewsItemComponent = ({
               background: "transparent",
             }}
           >
-            <h1>AI System analysis</h1>
+            <h1>AI-System Truthfulness Rating</h1>
             <div className="line"></div>
             <div
               css={{
