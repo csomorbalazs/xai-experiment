@@ -32,7 +32,7 @@ export const questionnaire = (
 
   return {
     firstPageIsStarted: true,
-    showPageNumbers: true,
+    showPageNumbers: false,
     showProgressBar: "top",
     pages: [
       startPage,

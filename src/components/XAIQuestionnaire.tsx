@@ -80,6 +80,9 @@ const XAIQuestionnaire = ({
             ".sd-row": {
               justifyContent: "center",
             },
+            ".sd-progress__text": {
+              display: "none",
+            },
           }}
         />
       </main>
