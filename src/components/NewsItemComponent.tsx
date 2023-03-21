@@ -241,7 +241,9 @@ const NewsItemComponent = ({
                       either easy, medium or hard to read. Please click next.
                     </TutorialTooltip>
                   )}
-                  <h2>Readability</h2>
+                  <h2>
+                    Explainability Feature 1: Readability of the news article
+                  </h2>
                   <div
                     css={{
                       display: "flex",
@@ -321,7 +323,10 @@ const NewsItemComponent = ({
                       or the truthfulness of the news item. Please click next.
                     </TutorialTooltip>
                   )}
-                  <h2>Highlights</h2>
+                  <h2>
+                    Explainability Feature 2: Text passages, where the
+                    AI-Systems truthfulness rating is based on
+                  </h2>
                   <div>
                     {getHighlightedSentences(
                       newsItem.xaiFeatures.highlightedContent
@@ -353,7 +358,10 @@ const NewsItemComponent = ({
                       click next.
                     </TutorialTooltip>
                   )}
-                  <h2>Sentiment highlights</h2>
+                  <h2>
+                    Explainability Feature 3: Words and phrases referring to
+                    emotional content
+                  </h2>
                   <div
                     css={{
                       display: "flex",
@@ -394,7 +402,7 @@ const NewsItemComponent = ({
                       carefully and click next.
                     </TutorialTooltip>
                   )}
-                  <h2>Natural language explanation</h2>
+                  <h2>Explainability Feature: Natural language explanation</h2>
                   <blockquote
                     css={{
                       borderLeft: "6px solid #FF6FFF",
