@@ -1,4 +1,5 @@
 export type TutorialTooltipStep =
+  | "overview"
   | "article"
   | "your-rating"
   | "ai-rating"

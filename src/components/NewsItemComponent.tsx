@@ -102,6 +102,13 @@ const NewsItemComponent = ({
         },
       }}
     >
+      {tutorialTooltip === "overview" && (
+        <TutorialTooltip>
+          <b>News Dashboard:</b> In the following we will walk you through the
+          different parts of the <b>News Dashboard</b> and introduce you to the
+          different steps of your task. Please click next.
+        </TutorialTooltip>
+      )}
       <article
         css={{
           position: "relative",
@@ -134,9 +141,10 @@ const NewsItemComponent = ({
       >
         {tutorialTooltip === "article" && (
           <TutorialTooltip>
-            Here the title and content of the news article are provided. The
-            article is written in the {newsItem.category} domain, displayed at
-            the top. Please read the news item carefully and click next.
+            <b>Step 1 - Read and Rate:</b> During step 1 (<b>Read</b>) you are
+            asked to read the news item carefully. You see here how the news
+            items are presented to you, with the title and the domain (here{" "}
+            {newsItem.category}) where it is written in. Please click next.
           </TutorialTooltip>
         )}
         <div
@@ -191,11 +199,12 @@ const NewsItemComponent = ({
             >
               {tutorialTooltip === "ai-rating" && (
                 <TutorialTooltip>
-                  This is the AI generated truthfulness rating from the AI
-                  system running in the background. The system is trained on
-                  many news items and predicts the truthfulness of the news
-                  item. Here you see also the publishing date and source
-                  publishing the news item. Please click next.
+                  <b>Step 2 - Inform:</b> During step 2 you see the truthfulness
+                  rating of the <b>AI-System</b> running in the background.
+                  Furthermore, you see the publishing date and the source of the
+                  source of the news item displayed below. Please check the{" "}
+                  <b>AI-generated</b> rating and the additional information
+                  carefully and click next.
                 </TutorialTooltip>
               )}
               <h2>Truthfulness</h2>
@@ -237,8 +246,12 @@ const NewsItemComponent = ({
                 >
                   {tutorialTooltip === "readability" && (
                     <TutorialTooltip>
-                      Here you can see the readability rating which can be
-                      either easy, medium or hard to read. Please click next.
+                      <b>Step 2 - Inform Readability:</b> The{" "}
+                      <b>explainability feature 1 - readability</b> of the
+                      source is displayed here. There are three readability
+                      categories: Easy, Medium, and Hard. The <b>AI-System</b>{" "}
+                      in the background automatically classifies the news
+                      article in one of the categories. Please click next.
                     </TutorialTooltip>
                   )}
                   <h2>
@@ -318,9 +331,15 @@ const NewsItemComponent = ({
                 >
                   {tutorialTooltip === "text-highlights" && (
                     <TutorialTooltip>
-                      Here you see the highlighted text in yellow, where the AI
-                      system detected content which either supports the fakeness
-                      or the truthfulness of the news item. Please click next.
+                      <b>Step 2 - Inform Text Highlights:</b> The{" "}
+                      <b>
+                        explainability feature 2 - the text highlighted in
+                        yellow,
+                      </b>{" "}
+                      are the statements that support the truthfulness rating of
+                      the <b>AI-System</b>. The <b>AI-System</b> in the
+                      background automatically marks the sentences where the
+                      rating is based on. Please click next.
                     </TutorialTooltip>
                   )}
                   <h2>
@@ -353,9 +372,13 @@ const NewsItemComponent = ({
                 >
                   {tutorialTooltip === "sentiment-highlights" && (
                     <TutorialTooltip>
-                      Here you see the words highlighted in blue which contain
-                      emotional content, which is typical for fake news. Please
-                      click next.
+                      <b>Step 2 - Inform Sentiment Highlights:</b> The{" "}
+                      <b>explainability feature 3 - text highlighted in blue</b>{" "}
+                      are the words and phrases containing emotional content.
+                      Sometimes fake news rely on emotional speech to engage the
+                      reader emotionally. The <b>AI-System</b> in the background
+                      automatically marks the sentences where emotional speech
+                      appears. Please click next.
                     </TutorialTooltip>
                   )}
                   <h2>
@@ -397,9 +420,13 @@ const NewsItemComponent = ({
                 >
                   {tutorialTooltip === "natural-language-explanation" && (
                     <TutorialTooltip>
-                      Here you read the natural language explanation of the AI
-                      system why the news item is true or false. Please read it
-                      carefully and click next.
+                      <b>Step 2 - Inform Natural Language Explanation:</b> The{" "}
+                      <b>explainability feature, text highlighted in pink</b>{" "}
+                      contains an explanation about the truthfulness of the news
+                      item. The <b>AI-System</b> in the background automatically
+                      generates this <b>natural language explanation</b>, which
+                      reflects the <b>AI-generated</b> truthfulness rating.
+                      Please read the explanation carefully and click next.
                     </TutorialTooltip>
                   )}
                   <h2>Explainability Feature: Natural language explanation</h2>
@@ -431,16 +458,22 @@ const NewsItemComponent = ({
         >
           {tutorialTooltip === "your-rating" && (
             <TutorialTooltip>
-              Here you can perform your own truthfulness rating based on the
-              news article and the additional information and explanations
-              provided. Please click next.
+              <b>Step 1 - Read and Rate:</b> During step 1 (<b>Rate</b>) you are
+              asked to perform your own truthfulness rating based on the news
+              article. To perform your rating you can change the slider below
+              between 0 and 100% of truthfulness. Please perform your rating and
+              click next.
             </TutorialTooltip>
           )}
           {tutorialTooltip === "redo-your-rating" && (
             <TutorialTooltip>
-              You will be asked to redo your personal truthfulness rating by
-              taking the additional information provided by the AI system into
-              account. Please click next.
+              <b>Step 3 - Repeat Rating:</b> You are asked to redo your
+              truthfulness rating again, by taking the{" "}
+              <b>additional information</b> on the right side into account.
+              Please notice, <b>there is no right and wrong</b>, feel free to
+              change your original rating in accordance to the new insights you
+              gained from the additional provided information. Please click
+              next.
             </TutorialTooltip>
           )}
           <h1>Your rating</h1>
