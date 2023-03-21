@@ -8,9 +8,9 @@ import {
 
 const informationSeekingBehaviour = [
   {
-    title: "Your General Behaviour Searching for Information",
+    title: "Survey Part 1: Your General Behaviour Searching for Information I",
     description:
-      "In this part you should answer questions about your usual information search. Please answer as truthfully as possible.",
+      "In this part you should answer questions about the accessibility and transparency of information. Please answer as truthfully as possible.",
     elements: [
       {
         type: "boolean",
@@ -51,18 +51,18 @@ const informationSeekingBehaviour = [
         type: "text",
         name: "most-used-source",
         hideNumber: true,
-        title:
-          "What is your most used source from the given sources? (display all source categories)",
+        title: "What is your most used source from the given sources above?",
       },
       {
         title:
-          "From the given sources: name the three sources you use most often and rank them.",
+          "From the given sources: name the three sources from above you use most often and rank them such, that you most accessed source appears first.",
         type: "text",
         name: "most-used-sources",
         hideNumber: true,
       },
       {
-        title: "How do you rate the seriousness of that source?",
+        title:
+          "How do you rate the seriousness of the source you named first in the previous question?",
         type: "matrix",
         name: "seriousness",
         hideNumber: true,
@@ -77,7 +77,7 @@ const informationSeekingBehaviour = [
       },
       {
         title:
-          "How would you rate the accuracy of information available from the following sources?",
+          "How would you rate the truthfulness of information available from the following sources?",
         type: "matrix",
         name: "accuracy",
         hideNumber: true,
@@ -94,7 +94,7 @@ const informationSeekingBehaviour = [
     ],
   },
   {
-    title: "Your General Behaviour Searching for Information II",
+    title: "Survey Part 1: Your General Behaviour Searching for Information II",
     description:
       "In this part you should answer questions about the accessibility and transparency of information. Please answer as truthfully as possible.",
     elements: [
@@ -102,14 +102,14 @@ const informationSeekingBehaviour = [
         type: "matrix",
         name: "accessibility",
         title:
-          "How accessible is information about transparency and reliability of online sources for you?",
+          "How accessible is transparent and reliable information about online sources and their content for you?",
         hideNumber: true,
         columns: accessibilityLikert7,
         alternateRows: true,
         rows: [
           {
             value: "accessibility-of-information-about-transparency",
-            text: "Transparency and reliability",
+            text: "Accessibility",
           },
         ],
       },
