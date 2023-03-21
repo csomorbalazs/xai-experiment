@@ -17,7 +17,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `newsitem-${newsItem.id}-rating-before-xai`,
+          name: `newsitem.${newsItem.id}.rating-before-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -32,7 +32,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `newsitem-${newsItem.id}-article-with-xai`,
+          name: `newsitem.${newsItem.id}.article-with-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -47,7 +47,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `newsitem-${newsItem.id}-rating-after-xai`,
+          name: `newsitem.${newsItem.id}.rating-after-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -63,7 +63,7 @@ const getPagesForNewsItem = (
         {
           // multiple choice control question
           type: "radiogroup",
-          name: `newsitem-${newsItem.id}-control-question`,
+          name: `newsitem.${newsItem.id}.control-question`,
           title: newsItem.controlQuestion.question,
           hideNumber: true,
           choicesOrder: "random",
@@ -87,7 +87,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "matrix",
-          name: `newsitem-${newsItem.id}-sys-evaluation`,
+          name: `newsitem.${newsItem.id}.system-evaluation`,
           title: "Competence",
           hideNumber: true,
           titleLocation: "hidden",
@@ -112,7 +112,7 @@ const getPagesForNewsItem = (
             },
             {
               text: "The presented explanations are comprehensible and help me with assessing the news articles",
-              value: "explanations-comprehensible-help-assess-news-articles",
+              value: "explanations-comprehensible-and-help-assess",
             },
           ],
         },

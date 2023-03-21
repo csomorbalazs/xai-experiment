@@ -53,7 +53,7 @@ const newsDashboardEvaluation = {
     },
     {
       type: "matrix",
-      name: "news-dashboard-evaluation-2",
+      name: "news-dashboard-evaluation",
       hideNumber: true,
       columns: satisfactionLikert7,
       alternateRows: true,

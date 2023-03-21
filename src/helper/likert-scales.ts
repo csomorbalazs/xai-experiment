@@ -92,3 +92,13 @@ export const satisfactionLikert7 = getLikertScale(7, [
   "Dissatisfied",
   "Completely dissatisfied",
 ]);
+
+export const truthfulnessLikert7 = getLikertScale(7, [
+  "Very truthful",
+  "Truthful",
+  "Somewhat truthful",
+  "Neutral",
+  "Somewhat untruthful",
+  "Untruthful",
+  "Very untruthful",
+]);

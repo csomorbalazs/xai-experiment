@@ -15,11 +15,11 @@ const expectations = {
       columns: agreementLikert7,
       rows: [
         {
-          value: "new-tech",
+          value: "trust-new-tech",
           text: "My typical approach is to trust new technologies until they prove to me that I shouldn't trust them",
         },
         {
-          value: "benefit-of doubt",
+          value: "benefit-of-doubt",
           text: "I generally give technology the benefit of the doubt when I first use it",
         },
         {
@@ -31,7 +31,7 @@ const expectations = {
           text: "I feel unsure of my ability to understand AI",
         },
         {
-          value: "ai-for-fake-news",
+          value: "ai-for-fake-news-good-idea",
           text: "I think it's a good idea to rely on AI for Fake News Detection",
         },
       ],

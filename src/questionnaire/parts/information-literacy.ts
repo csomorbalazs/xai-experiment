@@ -14,39 +14,39 @@ const informationLiteracy = {
       columns: likelihoodLikert7,
       rows: [
         {
-          value: "misinformation",
+          value: "identify-misinformation",
           text: "... I can identify misinformation in news",
         },
         {
-          value: "reliability",
+          value: "check-reliability",
           text: "... I can check the reliability of the searched information",
         },
         {
-          value: "subscribed-openaccess",
+          value: "efficiently-use-subscribed-and-openaccess",
           text: "... I can efficiently use subscribed and openaccess information resources when I am looking for information",
         },
         {
-          value: "authentic-sources",
+          value: "identify-authentic-sources",
           text: "... I can identify the best authentic sources of information",
         },
         {
-          value: "research-level",
+          value: "research-level-skilss",
           text: "... I have research-level skills",
         },
         {
-          value: "plagiarism",
+          value: "plagiarism-and-publication-ethics",
           text: "... I know about plagiarism and publication ethics",
         },
         {
-          value: "relevant-literature",
+          value: "access-relevant-literature",
           text: "... I have the skill to access information resources for finding relevant literature, about topics I want to verify (e.g. looking up information about climate change and its effect on our everyday life)",
         },
         {
-          value: "right-and-fake",
+          value: "differentiate-right-and-fake",
           text: "... I can differentiate between right and fake information when I am reading news, also online in my social media channels",
         },
         {
-          value: "it-skills",
+          value: "have-it-skills",
           text: "... I have skills in Information Technology (IT)",
         },
       ],

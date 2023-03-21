@@ -52,7 +52,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
       elements: [
         {
           type: "matrix",
-          name: "competence",
+          name: "ai-system-evaluation",
           hideNumber: true,
           columns: agreementLikert7,
           alternateRows: true,
@@ -101,7 +101,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
       elements: [
         {
           type: "matrix",
-          name: "transparency",
+          name: "ai-system-evaluation",
           hideNumber: true,
           columns: agreementLikert7,
           alternateRows: true,
@@ -129,7 +129,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
             },
             {
               text: "I tend to trust this AI-System, even though I have little or no knowledge of it",
-              value: "tend-to-trust-system",
+              value: "tend-to-trust-system-even-without-knowledge",
             },
             {
               text: "My tendency to trust this AI-System is high",
@@ -148,7 +148,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
         {
           title: "What was the most useful explanation feature for you?",
           type: "radiogroup",
-          name: "most-useful-explanation-feature",
+          name: "ai-system-evaluation.most-useful-explanation-feature",
           hideNumber: true,
           choices: featureChoices,
         },
@@ -156,14 +156,14 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           title:
             "What other information would you like to obtain to better assess the truthfulness of an article?",
           type: "text",
-          name: "other-information",
+          name: "ai-system-evaluation.other-information-wish",
           hideNumber: true,
         },
         {
           title:
             "What do you value more in terms of information - speed or comprehensiveness?",
           type: "radiogroup",
-          name: "value-speed-or-comprehensiveness",
+          name: "ai-system-evaluation.value-speed-or-comprehensiveness",
           hideNumber: true,
           choices: [
             { value: "speed", text: "Speed" },
@@ -174,12 +174,12 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           title:
             "What criteria do you usually use to judge whether a news/article is reliable?",
           type: "text",
-          name: "criteria-to-judge-reliability",
+          name: "ai-system-evaluation.criteria-to-judge-reliability",
           hideNumber: true,
         },
         {
           type: "matrix",
-          name: "expectations-after-exp",
+          name: "ai-system-evaluation",
           title: "Please answer the following questions about the AI-System",
           hideNumber: true,
           alternateRows: true,
@@ -217,15 +217,14 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           title:
             "You stated that the system is not helpful for your everyday work. Why?",
           type: "text",
-          name: "why-not-helpful-for-everyday-work",
+          name: "ai-system-evaluation.why-not-helpful-for-everyday-work",
           hideNumber: true,
-          visibleIf:
-            "{expectations-after-exp.everyday-work-helpful-after-exp} < 4",
+          visibleIf: "{ai-system-evaluation.everyday-work-helpful} < 4",
         },
         {
           title: "What functionality would be a good addition?",
           type: "text",
-          name: "additional-functionality",
+          name: "ai-system-evaluation.additional-functionality",
           hideNumber: true,
         },
       ],

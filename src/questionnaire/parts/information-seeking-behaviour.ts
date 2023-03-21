@@ -1,9 +1,9 @@
 import {
   accessibilityLikert7,
-  accuracyLikert7,
   frequencyLikert7,
   importanceLikert7,
   seriousnessLikert7,
+  truthfulnessLikert7,
 } from "@/helper/likert-scales";
 
 const informationSeekingBehaviour = [
@@ -23,7 +23,7 @@ const informationSeekingBehaviour = [
       },
       {
         type: "matrix",
-        name: "sources",
+        name: "information-seeking.sources",
         title:
           "How often do you use these sources to learn about different topics?",
         hideNumber: true,
@@ -49,28 +49,28 @@ const informationSeekingBehaviour = [
       },
       {
         type: "text",
-        name: "most-used-source",
-        hideNumber: true,
+        name: "information-seeking.most-used-source",
         title: "What is your most used source from the given sources above?",
+        hideNumber: true,
       },
       {
+        type: "text",
+        name: "information-seeking.most-used-sources",
         title:
           "From the given sources: name the three sources from above you use most often and rank them such, that you most accessed source appears first.",
-        type: "text",
-        name: "most-used-sources",
         hideNumber: true,
       },
       {
         title:
           "How do you rate the seriousness of the source you named first in the previous question?",
         type: "matrix",
-        name: "seriousness",
+        name: "information-seeking",
         hideNumber: true,
         columns: seriousnessLikert7,
         alternateRows: true,
         rows: [
           {
-            value: "source-seriousness",
+            value: "top-source-seriousness",
             text: "Seriousness of the source",
           },
         ],
@@ -79,9 +79,9 @@ const informationSeekingBehaviour = [
         title:
           "How would you rate the truthfulness of information available from the following sources?",
         type: "matrix",
-        name: "accuracy",
+        name: "information-seeking.truthfulness",
         hideNumber: true,
-        columns: accuracyLikert7,
+        columns: truthfulnessLikert7,
         alternateRows: true,
         rows: [
           { value: "newspaper", text: "Newspaper" },
@@ -100,7 +100,7 @@ const informationSeekingBehaviour = [
     elements: [
       {
         type: "matrix",
-        name: "accessibility",
+        name: "information-seeking",
         title:
           "How accessible is transparent and reliable information about online sources and their content for you?",
         hideNumber: true,
@@ -116,7 +116,7 @@ const informationSeekingBehaviour = [
       {
         title: "How do you access the material?",
         type: "matrix",
-        name: "access",
+        name: "information-seeking.access",
         hideNumber: true,
         columns: frequencyLikert7,
         alternateRows: true,
@@ -131,7 +131,7 @@ const informationSeekingBehaviour = [
         title:
           "How important is it for you to receive comprehensive information?",
         type: "matrix",
-        name: "comprehensive-information",
+        name: "information-seeking",
         hideNumber: true,
         columns: importanceLikert7,
         alternateRows: true,
@@ -145,7 +145,7 @@ const informationSeekingBehaviour = [
       {
         title: "What is your purpose of information seeking?",
         type: "matrix",
-        name: "purpose",
+        name: "information-seeking.purpose",
         hideNumber: true,
         columns: frequencyLikert7,
         alternateRows: true,

@@ -6,7 +6,7 @@ const demographics = {
     {
       title: "To which age category do you belong?",
       type: "radiogroup",
-      name: "age",
+      name: "demographics.age",
       hideNumber: true,
       choices: [
         { value: "18-20", text: "18-20" },
@@ -20,7 +20,7 @@ const demographics = {
     {
       title: "What is your gender?",
       type: "radiogroup",
-      name: "gender",
+      name: "demographics.gender",
       hideNumber: true,
       choices: [
         { value: "female", text: "female" },
@@ -31,19 +31,19 @@ const demographics = {
     {
       title: "In which country do you currently live?",
       type: "text",
-      name: "country",
+      name: "demographics.country",
       hideNumber: true,
     },
     {
       title: "What is your nationality?",
       type: "text",
-      name: "nationality",
+      name: "demographics.nationality",
       hideNumber: true,
     },
     {
       title: "What is your highest school-leaving qualification?",
       type: "radiogroup",
-      name: "education",
+      name: "demographics.education",
       hideNumber: true,
       choices: [
         { value: "no-degree", text: "no degree" },
@@ -60,7 +60,7 @@ const demographics = {
       title:
         "Which of the following categories best describes your employment status?",
       type: "radiogroup",
-      name: "employment",
+      name: "demographics.employment",
       hideNumber: true,
       choices: [
         { value: "apprentice", text: "Apprentice" },
@@ -76,7 +76,7 @@ const demographics = {
     {
       title: "What is your annual household income (gross)?",
       type: "radiogroup",
-      name: "income",
+      name: "demographics.income",
       hideNumber: true,
       choices: [
         { value: "less-than-20000-eur", text: "Less than 20.000€" },
