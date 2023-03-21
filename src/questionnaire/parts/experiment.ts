@@ -95,23 +95,23 @@ const getPagesForNewsItem = (
           alternateRows: true,
           rows: [
             {
-              text: "The system classified the news items correctly.",
+              text: "The AI-System classified the news items correctly",
               value: "classified-correctly",
             },
             {
-              text: "I understand what the system does.",
+              text: "I understand what the AI-System does",
               value: "understand-what-system-does",
             },
             {
-              text: "The explainability features presented are useful to assess the credibility of the news item.",
-              value: "useful-assess-credibility-news-item",
+              text: "The explainability features presented are useful to assess the truthfulness of the news article",
+              value: "xai-features-useful",
             },
             {
-              text: "The indications given by the system are useful to assess the credibility of the news item.",
-              value: "useful-assess-credibility-news-item-indications",
+              text: "The indications given by the AI-System are useful to assess the truthfulness of the news article",
+              value: "indications-useful",
             },
             {
-              text: "The presented explanations are comprehensible and help me with assessing the news articles.",
+              text: "The presented explanations are comprehensible and help me with assessing the news articles",
               value: "explanations-comprehensible-help-assess-news-articles",
             },
           ],
