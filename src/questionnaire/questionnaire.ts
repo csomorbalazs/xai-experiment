@@ -4,14 +4,14 @@ import expectations from "./parts/expectations";
 import informationLiteracy from "./parts/information-literacy";
 import informationSeekingBehaviour from "./parts/information-seeking-behaviour";
 import experimentPages from "./parts/experiment";
-import systemEvaluation from "./parts/system-evaluation";
-import postQuestionnaire from "./parts/post-questionnaire";
+import aiSystemEvaluation from "./parts/ai-system-evaluation";
 import demographics from "./parts/demographics";
 import almostDone from "./parts/almost-done";
 import tutorial from "./parts/tutorial";
 import youAreReady from "./parts/you-are-ready";
 import personalCode from "./parts/personal-code";
 import NewsItem from "@/model/news-item";
+import newsDashboardEvaluation from "./parts/news-dashboard-evaluation";
 
 export const questionnaire = (
   newsItems: NewsItem[],
@@ -44,8 +44,8 @@ export const questionnaire = (
       youAreReady,
       ...experimentPages(newsItems, xaiFeatures),
       almostDone,
-      ...systemEvaluation,
-      postQuestionnaire(xaiFeatures),
+      ...aiSystemEvaluation(xaiFeatures),
+      newsDashboardEvaluation,
       demographics,
     ],
   };
