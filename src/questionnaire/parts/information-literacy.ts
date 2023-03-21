@@ -35,7 +35,7 @@ const informationLiteracy = {
         },
         {
           value: "plagiarism",
-          text: "... I know about plagiarism and publication ethics.",
+          text: "... I know about plagiarism and publication ethics",
         },
         {
           value: "relevant-literature",
