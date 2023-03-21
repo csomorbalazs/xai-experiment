@@ -17,7 +17,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `${newsItem.id}-rating-before-xai`,
+          name: `newsitem-${newsItem.id}-rating-before-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -32,7 +32,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `${newsItem.id}-article-with-xai`,
+          name: `newsitem-${newsItem.id}-article-with-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -47,7 +47,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "newsitem",
-          name: `${newsItem.id}-rating-after-xai`,
+          name: `newsitem-${newsItem.id}-rating-after-xai`,
           hideNumber: true,
           titleLocation: "hidden",
           newsitem: newsItem,
@@ -63,7 +63,7 @@ const getPagesForNewsItem = (
         {
           // multiple choice control question
           type: "radiogroup",
-          name: `${newsItem.id}-control-question`,
+          name: `newsitem-${newsItem.id}-control-question`,
           title: newsItem.controlQuestion.question,
           hideNumber: true,
           choicesOrder: "random",
@@ -87,7 +87,7 @@ const getPagesForNewsItem = (
       elements: [
         {
           type: "matrix",
-          name: `${newsItem.id}-sys-evaluation`,
+          name: `newsitem-${newsItem.id}-sys-evaluation`,
           title: "Competence",
           hideNumber: true,
           titleLocation: "hidden",
