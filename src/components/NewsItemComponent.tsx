@@ -344,7 +344,7 @@ const NewsItemComponent = ({
                   )}
                   <h2>
                     Explainability Feature 2: Text passages, where the
-                    AI-Systems truthfulness rating is based on
+                    AI-System&apos;s truthfulness rating is based on
                   </h2>
                   <div>
                     {getHighlightedSentences(
