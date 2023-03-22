@@ -24,7 +24,7 @@ export const questionnaire = (
   if (experimentOnly) {
     return {
       firstPageIsStarted: false,
-      showPageNumbers: true,
+      showPageNumbers: false,
       showProgressBar: "top",
       pages: [...experimentPages(newsItems, xaiFeatures)],
     };
