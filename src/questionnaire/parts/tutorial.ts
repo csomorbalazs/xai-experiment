@@ -27,7 +27,7 @@ const getTutorialPageForStep = (
       {
         type: "newsitem",
         hideNumber: true,
-        name: `tutorial-${step}`,
+        name: `tutorial.${step}`,
         titleLocation: "hidden",
         newsitem: newsItem,
         xaiFeatures: xaiFeatures,
