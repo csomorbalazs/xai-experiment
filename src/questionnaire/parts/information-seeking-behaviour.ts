@@ -49,12 +49,6 @@ const informationSeekingBehaviour = [
       },
       {
         type: "text",
-        name: "information-seeking.most-used-source",
-        title: "What is your most used source from the given sources above?",
-        hideNumber: true,
-      },
-      {
-        type: "text",
         name: "information-seeking.most-used-sources",
         title:
           "From the given sources: name the three sources from above you use most often and rank them such, that you most accessed source appears first.",
