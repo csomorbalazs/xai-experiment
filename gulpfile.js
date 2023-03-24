@@ -5,10 +5,17 @@ const replace = require("gulp-replace");
 gulp.task("default", () => {
   return (
     gulp
-      .src("./out/**/*.html", { ignore: "./out/*.html" })
+      .src("./out/**/*.html", {
+        ignore: ["./out/index.html", "./out/404.html"],
+      })
       // rename file from "/basic/group-1.html" to "basic-group-1.html"
       .pipe(
         rename((path) => {
+          if (path.basename === "random") {
+            path.extname = ".jsonhtml";
+            return;
+          }
+
           path.dirname = path.dirname.replace("/", "-");
           path.basename = path.dirname + "-" + path.basename;
           path.dirname = "";
