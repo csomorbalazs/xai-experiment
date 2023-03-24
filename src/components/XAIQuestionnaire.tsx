@@ -10,10 +10,14 @@ import NewsItem from "@/model/news-item";
 const XAIQuestionnaire = ({
   newsItems,
   xaiFeature,
+  groupNumber,
 }: {
   newsItems: NewsItem[];
   xaiFeature: XAIFeatureLevel;
+  groupNumber: number;
 }) => {
+  console.log(`GROUP: ${groupNumber}; FEATURE: ${xaiFeature}`);
+
   registerMyQuestion();
   const survey = new Model(questionnaire(newsItems, xaiFeature));
 
@@ -38,25 +42,28 @@ const XAIQuestionnaire = ({
     const submitForm = (document.getElementById("submit-form") ??
       document.querySelector("body > form")) as HTMLFormElement;
 
+    const addHiddenInput = (name: string, value: any) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      submitForm.appendChild(input);
+    };
+
     // add the survey data to the form one by one
     for (const key in result.data) {
       // if the data is an object, add each key-value pair as a hidden input
       if (typeof result.data[key] === "object") {
         for (const subKey in result.data[key]) {
-          const input = document.createElement("input");
-          input.type = "hidden";
-          input.name = `${key}.${subKey}`;
-          input.value = result.data[key][subKey];
-          submitForm.appendChild(input);
+          addHiddenInput(`${key}.${subKey}`, result.data[key][subKey]);
         }
       } else {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = result.data[key];
-        submitForm.appendChild(input);
+        addHiddenInput(key, result.data[key]);
       }
     }
+
+    addHiddenInput("METADATA.GROUP", groupNumber);
+    addHiddenInput("METADATA.FEATURE", xaiFeature);
 
     // submit the form
     submitForm.submit();
@@ -65,7 +72,7 @@ const XAIQuestionnaire = ({
   return (
     <>
       <Head>
-        <title>XAI Experiment - {xaiFeature}</title>
+        <title>XAI Experiment</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -13,7 +13,13 @@ const Home = ({
   const groupNumber = parseInt(group.split("-")[1]);
   const newsItems = getRandomizedNewsItems(groupNumber);
 
-  return <XAIQuestionnaire newsItems={newsItems} xaiFeature={features} />;
+  return (
+    <XAIQuestionnaire
+      newsItems={newsItems}
+      xaiFeature={features}
+      groupNumber={groupNumber}
+    />
+  );
 };
 
 export default Home;

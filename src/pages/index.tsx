@@ -46,6 +46,12 @@ const Home = () => {
             <Link href="/explanations/group-1">Group 1</Link> -{" "}
             <Link href="/explanations/group-2">Group 2</Link>
           </li>
+          <li>
+            Random:{" "}
+            <Link href="/random">
+              (group: 1/2, feature: salient/explanations)
+            </Link>
+          </li>
         </ul>
         <h2
           css={{
