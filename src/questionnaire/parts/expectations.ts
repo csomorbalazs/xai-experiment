@@ -10,6 +10,7 @@ const expectations = {
       type: "matrix",
       name: "expectations",
       titleLocation: "hidden",
+      isAllRowRequired: true,
       hideNumber: true,
       alternateRows: true,
       columns: agreementLikert7,

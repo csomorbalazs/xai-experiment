@@ -10,10 +10,12 @@ const getTutorialPageForStep = (
     isInput,
     xaiFeatures,
     step,
+    isRequired = false,
   }: {
     isInput: boolean;
     xaiFeatures: XAIFeatureLevel;
     step: TutorialTooltipStep;
+    isRequired?: boolean;
   }
 ) => {
   const title = "Truthfulness Rating of News Items";
@@ -34,6 +36,7 @@ const getTutorialPageForStep = (
         isInput: isInput,
         isTutorial: true,
         tutorialTooltip: step,
+        isRequired: isRequired,
       },
     ],
   };
@@ -58,6 +61,7 @@ const getTutorialPagesForNewsItem = (
       isInput: true,
       xaiFeatures: "none",
       step: "your-rating",
+      isRequired: true,
     }),
     getTutorialPageForStep(newsItem, {
       isInput: false,
@@ -92,6 +96,7 @@ const getTutorialPagesForNewsItem = (
       isInput: true,
       xaiFeatures: xaiFeatures,
       step: "redo-your-rating",
+      isRequired: true,
     }),
   ];
 };

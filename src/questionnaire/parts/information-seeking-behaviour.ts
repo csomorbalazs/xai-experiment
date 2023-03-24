@@ -20,6 +20,7 @@ const informationSeekingBehaviour = [
         valueFalse: "No",
         renderAs: "radio",
         hideNumber: true,
+        isRequired: true,
       },
       {
         type: "matrix",
@@ -29,6 +30,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: frequencyLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           { value: "newspaper", text: "Newspaper" },
           { value: "online-newspaper", text: "Online newspaper" },
@@ -53,6 +55,7 @@ const informationSeekingBehaviour = [
         title:
           "From the given sources: name the three sources from above you use most often and rank them such, that you most accessed source appears first.",
         hideNumber: true,
+        isRequired: true,
       },
       {
         title:
@@ -62,6 +65,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: seriousnessLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           {
             value: "top-source-seriousness",
@@ -77,6 +81,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: truthfulnessLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           { value: "newspaper", text: "Newspaper" },
           { value: "online-newspaper", text: "Online newspaper" },
@@ -100,6 +105,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: accessibilityLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           {
             value: "accessibility-of-information-about-transparency",
@@ -114,6 +120,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: frequencyLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           { value: "personal-purchase", text: "By personal purchase" },
           { value: "google", text: "Google" },
@@ -129,6 +136,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: importanceLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           {
             value: "comprehensive-information",
@@ -143,6 +151,7 @@ const informationSeekingBehaviour = [
         hideNumber: true,
         columns: frequencyLikert7,
         alternateRows: true,
+        isAllRowRequired: true,
         rows: [
           { value: "keep-up-to-date", text: "Keep up-to-date" },
           { value: "general-awareness", text: "General awareness" },

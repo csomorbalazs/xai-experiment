@@ -57,6 +57,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           columns: agreementLikert7,
           alternateRows: true,
           titleLocation: "hidden",
+          isAllRowRequired: true,
           rows: [
             {
               text: "The AI-System supports decision-making in fake news detection very well",
@@ -106,6 +107,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           columns: agreementLikert7,
           alternateRows: true,
           titleLocation: "hidden",
+          isAllRowRequired: true,
           rows: [
             {
               text: "I think I understand why this AI-System provided the decision it did",
@@ -151,6 +153,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           name: "ai-system-evaluation.most-useful-explanation-feature",
           hideNumber: true,
           choices: featureChoices,
+          isRequired: true,
         },
         {
           title:
@@ -158,6 +161,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           type: "text",
           name: "ai-system-evaluation.other-information-wish",
           hideNumber: true,
+          isRequired: true,
         },
         {
           title:
@@ -169,6 +173,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
             { value: "speed", text: "Speed" },
             { value: "comprehensiveness", text: "Comprehensiveness" },
           ],
+          isRequired: true,
         },
         {
           title:
@@ -176,6 +181,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           type: "text",
           name: "ai-system-evaluation.criteria-to-judge-reliability",
           hideNumber: true,
+          isRequired: true,
         },
         {
           type: "matrix",
@@ -184,6 +190,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           hideNumber: true,
           alternateRows: true,
           columns: agreementLikert7,
+          isAllRowRequired: true,
           rows: [
             {
               value: "ai-intimidates",
@@ -220,12 +227,14 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           name: "ai-system-evaluation.why-not-helpful-for-everyday-work",
           hideNumber: true,
           visibleIf: "{ai-system-evaluation.everyday-work-helpful} < 4",
+          isRequired: true,
         },
         {
           title: "What functionality would be a good addition?",
           type: "text",
           name: "ai-system-evaluation.additional-functionality",
           hideNumber: true,
+          isRequired: true,
         },
       ],
     },

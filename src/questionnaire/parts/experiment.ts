@@ -23,6 +23,7 @@ const getPagesForNewsItem = (
           newsitem: newsItem,
           xaiFeatures: "none",
           isInput: true,
+          isRequired: true,
         },
       ],
     },
@@ -53,6 +54,7 @@ const getPagesForNewsItem = (
           newsitem: newsItem,
           xaiFeatures: xaiFeatures,
           isInput: true,
+          isRequired: true,
         },
       ],
     },
@@ -67,6 +69,7 @@ const getPagesForNewsItem = (
           title: newsItem.controlQuestion.question,
           hideNumber: true,
           choicesOrder: "random",
+          isRequired: true,
           choices: [
             {
               value: "correct",
@@ -93,6 +96,7 @@ const getPagesForNewsItem = (
           titleLocation: "hidden",
           columns: agreementLikert7,
           alternateRows: true,
+          isAllRowRequired: true,
           rows: [
             {
               text: "The AI-System classified the news items correctly",

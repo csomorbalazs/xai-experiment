@@ -8,6 +8,7 @@ const demographics = {
       type: "radiogroup",
       name: "demographics.age",
       hideNumber: true,
+      isRequired: true,
       choices: [
         { value: "18-20", text: "18-20" },
         { value: "21-29", text: "21-29" },
@@ -22,6 +23,7 @@ const demographics = {
       type: "radiogroup",
       name: "demographics.gender",
       hideNumber: true,
+      isRequired: true,
       choices: [
         { value: "female", text: "female" },
         { value: "male", text: "male" },
@@ -33,18 +35,21 @@ const demographics = {
       type: "text",
       name: "demographics.country",
       hideNumber: true,
+      isRequired: true,
     },
     {
       title: "What is your nationality?",
       type: "text",
       name: "demographics.nationality",
       hideNumber: true,
+      isRequired: true,
     },
     {
       title: "What is your highest school-leaving qualification?",
       type: "radiogroup",
       name: "demographics.education",
       hideNumber: true,
+      isRequired: true,
       choices: [
         { value: "no-degree", text: "no degree" },
         {
@@ -62,6 +67,7 @@ const demographics = {
       type: "radiogroup",
       name: "demographics.employment",
       hideNumber: true,
+      isRequired: true,
       choices: [
         { value: "apprentice", text: "Apprentice" },
         { value: "student", text: "Student" },
@@ -78,6 +84,7 @@ const demographics = {
       type: "radiogroup",
       name: "demographics.income",
       hideNumber: true,
+      isRequired: true,
       choices: [
         { value: "less-than-20000-eur", text: "Less than 20.000€" },
         { value: "20000-34999-eur", text: "20.000-34.999€" },

@@ -12,6 +12,7 @@ const newsDashboardEvaluation = {
       columns: agreementLikert7,
       alternateRows: true,
       titleLocation: "hidden",
+      isAllRowRequired: true,
       rows: [
         {
           text: "Using the News Dashboard would increase my effectiveness in detecting fake news.",
@@ -58,6 +59,7 @@ const newsDashboardEvaluation = {
       columns: satisfactionLikert7,
       alternateRows: true,
       titleLocation: "hidden",
+      isAllRowRequired: true,
       rows: [
         {
           text: "How satisfied are you with the explanatory quality of the News Dashboard?",

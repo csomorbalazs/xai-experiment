@@ -11,6 +11,7 @@ const informationLiteracy = {
       title: "I think...",
       alternateRows: true,
       hideNumber: true,
+      isAllRowRequired: true,
       columns: likelihoodLikert7,
       rows: [
         {
