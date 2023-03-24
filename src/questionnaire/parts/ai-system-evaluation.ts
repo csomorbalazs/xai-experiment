@@ -215,7 +215,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
             },
             {
               value: "system-has-functionality-for-work",
-              text: "For my everyday work assessing information the AI-System is helpful",
+              text: "The AI-System has the functionality I need for my work",
               visibleIf: "{journalist}='Yes'",
             },
           ],
