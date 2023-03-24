@@ -24,16 +24,16 @@ const expectations = {
           text: "I generally give technology the benefit of the doubt when I first use it",
         },
         {
-          value: "ai-intimidates",
-          text: "AI intimidates me",
+          value: "trust-ai",
+          text: "In general do you trust AI?",
         },
         {
-          value: "understand-ai",
-          text: "I feel unsure of my ability to understand AI",
+          value: "sceptical-about-ai",
+          text: "In general, are you sceptical about AI?",
         },
         {
-          value: "ai-for-fake-news-good-idea",
-          text: "I think it's a good idea to rely on AI for Fake News Detection",
+          value: "rely-on-ai-for-fake-news-detection",
+          text: "How willing are you to rely on information provided by an AI system in the context of fake news detection?",
         },
       ],
     },
