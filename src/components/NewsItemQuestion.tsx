@@ -34,6 +34,7 @@ export class NewsItemQuestion extends SurveyElementBase<
       isTutorialMode: boolean;
       tutorialTooltip: string;
       value?: number;
+      hasVisibleErrors: boolean;
     };
   },
   {
@@ -42,10 +43,6 @@ export class NewsItemQuestion extends SurveyElementBase<
 > {
   constructor(props: any) {
     super(props);
-
-    if (this.question.isInput) {
-      this.question.value = undefined;
-    }
   }
 
   get value() {
@@ -68,6 +65,8 @@ export class NewsItemQuestion extends SurveyElementBase<
         }}
         isTutorialMode={this.question.isTutorialMode}
         tutorialTooltip={this.question.tutorialTooltip as any}
+        defaultRatingValue={this.question.value}
+        showError={this.question.hasVisibleErrors}
       />
     );
   }

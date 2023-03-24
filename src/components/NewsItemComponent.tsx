@@ -12,6 +12,8 @@ const NewsItemComponent = ({
   onRatingChange = () => {},
   isTutorialMode = false,
   tutorialTooltip = null,
+  defaultRatingValue = undefined,
+  showError = false,
 }: {
   newsItem: NewsItem;
   xaiFeatures: XAIFeatureLevel;
@@ -19,8 +21,12 @@ const NewsItemComponent = ({
   onRatingChange: (value: number) => void;
   isTutorialMode: boolean;
   tutorialTooltip: TutorialTooltipStep | null;
+  defaultRatingValue: number | undefined;
+  showError: boolean;
 }) => {
-  const [ratingValue, setRatingValue] = useState<number | undefined>(undefined);
+  const [ratingValue, setRatingValue] = useState<number | undefined>(
+    defaultRatingValue
+  );
 
   const xaiHighlight = (content: string) => {
     return content
@@ -450,7 +456,7 @@ const NewsItemComponent = ({
         <div
           className="container"
           css={{
-            border: "1px solid #19B394",
+            border: !showError ? "1px solid #19B394" : "1px solid #E60A3E",
             flex: 1,
             minWidth: "58%",
             position: "relative",
