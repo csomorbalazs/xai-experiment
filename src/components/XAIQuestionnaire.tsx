@@ -43,9 +43,21 @@ const XAIQuestionnaire = ({
       document.querySelector("body > form")) as HTMLFormElement;
 
     const formData: { [key: string]: any } = {
-      "x-crowdee-task": submitForm.getAttribute("x-crowdee-task"),
-      "x-crowdee-user": submitForm.getAttribute("x-crowdee-user"),
-      "x-crowdee-mode": submitForm.getAttribute("x-crowdee-mode"),
+      "x-crowdee-task": (
+        submitForm.querySelector(
+          "input[name=x-crowdee-task]"
+        ) as HTMLInputElement
+      )?.value,
+      "x-crowdee-user": (
+        submitForm.querySelector(
+          "input[name=x-crowdee-user]"
+        ) as HTMLInputElement
+      )?.value,
+      "x-crowdee-mode": (
+        submitForm.querySelector(
+          "input[name=x-crowdee-mode]"
+        ) as HTMLInputElement
+      )?.value,
       "METADATA.GROUP": groupNumber,
       "METADATA.FEATURE": xaiFeature,
     };
@@ -62,13 +74,21 @@ const XAIQuestionnaire = ({
 
     const options = {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "text/html",
+      },
       body: new URLSearchParams(formData),
     };
 
     fetch(submitForm.action, options)
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+      .then((response) => response.text())
+      .then((html) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const body = doc.querySelector("body");
+        document.body.innerHTML = body!.innerHTML;
+      });
   });
 
   return (
