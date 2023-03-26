@@ -42,31 +42,33 @@ const XAIQuestionnaire = ({
     const submitForm = (document.getElementById("submit-form") ??
       document.querySelector("body > form")) as HTMLFormElement;
 
-    const addHiddenInput = (name: string, value: any) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = name;
-      input.value = value;
-      submitForm.appendChild(input);
+    const formData: { [key: string]: any } = {
+      "x-crowdee-task": submitForm.getAttribute("x-crowdee-task"),
+      "x-crowdee-user": submitForm.getAttribute("x-crowdee-user"),
+      "x-crowdee-mode": submitForm.getAttribute("x-crowdee-mode"),
+      "METADATA.GROUP": groupNumber,
+      "METADATA.FEATURE": xaiFeature,
     };
 
-    // add the survey data to the form one by one
     for (const key in result.data) {
-      // if the data is an object, add each key-value pair as a hidden input
       if (typeof result.data[key] === "object") {
         for (const subKey in result.data[key]) {
-          addHiddenInput(`${key}.${subKey}`, result.data[key][subKey]);
+          formData[`${key}.${subKey}`] = result.data[key][subKey];
         }
       } else {
-        addHiddenInput(key, result.data[key]);
+        formData[key] = result.data[key];
       }
     }
 
-    addHiddenInput("METADATA.GROUP", groupNumber);
-    addHiddenInput("METADATA.FEATURE", xaiFeature);
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData),
+    };
 
-    // submit the form
-    submitForm.submit();
+    fetch(submitForm.action, options)
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   });
 
   return (
