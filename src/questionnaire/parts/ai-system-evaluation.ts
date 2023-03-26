@@ -193,16 +193,20 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           isAllRowRequired: true,
           rows: [
             {
-              value: "ai-intimidates",
-              text: "The AI-System intimidates me",
+              value: "trust-new-tech",
+              text: "My typical approach is to trust new technologies until they prove to me that I shouldn't trust them",
             },
             {
-              value: "understand-ai",
-              text: "I feel unsure of my ability to understand the AI-System",
+              value: "benefit-of-doubt",
+              text: "I generally give technology the benefit of the doubt when I first use it",
             },
             {
-              value: "ai-for-fake-news",
-              text: "I think it's a good idea to rely on the AI-System for fake news detection",
+              value: "sceptical-about-ai-system",
+              text: "Overall, are you sceptical about the AI-System?",
+            },
+            {
+              value: "rely-on-ai-system",
+              text: "How willing are you to rely on information provided by the AI-System in the context of fake news detection?",
             },
             {
               value: "system-helpful",
