@@ -84,10 +84,10 @@ const XAIQuestionnaire = ({
     fetch(submitForm.action, options)
       .then((response) => response.text())
       .then((html) => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, "text/html");
-        const body = doc.querySelector("body");
-        document.body.innerHTML = body!.innerHTML;
+        // replace the entire page with the response from the server
+        document.open();
+        document.write(html);
+        document.close();
       });
   });
 
