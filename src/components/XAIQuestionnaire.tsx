@@ -98,7 +98,11 @@ const XAIQuestionnaire = ({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main
+        css={{
+          position: "relative",
+        }}
+      >
         <Survey
           model={survey}
           css={{
@@ -114,6 +118,24 @@ const XAIQuestionnaire = ({
             },
           }}
         />
+        <div
+          className="imprint"
+          css={{
+            fontFamily: "Inter, sans-serif",
+            color: "#1D1D1F",
+            fontSize: "13px",
+            padding: "24px",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            This experiment is conducted by the{" "}
+            <a href="https://www.tu.berlin/qu">
+              TU Berlin, Quality and Usability Lab
+            </a>
+          </div>
+        </div>
       </main>
     </>
   );
