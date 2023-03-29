@@ -184,6 +184,16 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
           isRequired: true,
         },
         {
+          type: "boolean",
+          name: "journalist2",
+          title: "Are a journalist by profession?",
+          valueTrue: "Yes",
+          valueFalse: "No",
+          renderAs: "radio",
+          hideNumber: true,
+          isRequired: true,
+        },
+        {
           type: "matrix",
           name: "ai-system-evaluation",
           title: "Please answer the following questions about the AI-System",
@@ -215,12 +225,12 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
             {
               value: "everyday-work-helpful",
               text: "For my everyday work assessing information the AI-System is helpful",
-              visibleIf: "{journalist}='Yes'",
+              visibleIf: "{journalist2}='Yes'",
             },
             {
               value: "system-has-functionality-for-work",
               text: "The AI-System has the functionality I need for my work",
-              visibleIf: "{journalist}='Yes'",
+              visibleIf: "{journalist2}='Yes'",
             },
           ],
         },
