@@ -50,12 +50,36 @@ const informationSeekingBehaviour = [
         ],
       },
       {
-        type: "text",
+        type: "checkbox",
         name: "information-seeking.most-used-sources",
-        title:
-          "From the given sources: name the three sources from above you use most often and rank them such, that you most accessed source appears first.",
+        title: "Choose the three sources from above you use most often!",
         hideNumber: true,
         isRequired: true,
+        maxSelectedChoices: 3,
+        validators: [
+          {
+            type: "answercount",
+            text: "Invalid response: please select three sources",
+            minCount: 3,
+          },
+        ],
+        choices: [
+          { value: "newspaper", text: "Newspaper" },
+          { value: "online-newspaper", text: "Online newspaper" },
+          { value: "instagram", text: "Instagram" },
+          { value: "twitter", text: "Twitter" },
+          { value: "facebook", text: "Facebook" },
+          {
+            value: "interview",
+            text: "Personal Talk (Interview)",
+            visibleIf: "{journalist}='Yes'",
+          },
+          { value: "blogs-websites", text: "Blogs/Websites" },
+          {
+            value: "personal-social-networks",
+            text: "In personal social networks",
+          },
+        ],
       },
       {
         title:
