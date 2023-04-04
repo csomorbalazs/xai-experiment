@@ -18,10 +18,6 @@ export const qualificationQuestionnaire = (
   const urlParams = new URLSearchParams(window.location.search);
   const experimentOnly = urlParams.get("experimentOnly") === "true";
 
-  const allControlQuestionsCorrectExpression = newsItems
-    .map((item) => `{newsitem.${item.id}.control-question} = 'correct'`)
-    .join(" and ");
-
   const questionnaire = {
     firstPageIsStarted: true,
     showPageNumbers: false,
@@ -39,7 +35,7 @@ export const qualificationQuestionnaire = (
     ],
     completedHtmlOnCondition: [
       {
-        expression: allControlQuestionsCorrectExpression,
+        expression: `{correctAnswers} == {questionCount}`,
         html: `<div style="max-width: 900px; margin: 0 auto;">
         <p>
         Thank you for taking part in the qualification job! You have answered both control questions correctly and can take part in the main job.

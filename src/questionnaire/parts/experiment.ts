@@ -80,6 +80,7 @@ const getPagesForNewsItem = (
               text: answer,
             })),
           ],
+          correctAnswer: "correct",
         },
       ],
     },
