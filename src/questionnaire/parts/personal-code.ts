@@ -37,7 +37,6 @@ const personalCode = {
       type: "text",
       name: "personal-code",
       title: "Please enter your personal code:",
-      isRequired: true,
       hideNumber: true,
       placeHolder: "e.g. MLT93",
     },

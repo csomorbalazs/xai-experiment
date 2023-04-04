@@ -24,13 +24,14 @@ const Home = () => {
     localStorage.setItem("xai-experiment.feature", feature);
   }
 
-  const newsItems = getRandomizedNewsItems(groupNumber);
+  const newsItems = getRandomizedNewsItems(groupNumber, "merged");
 
   return (
     <XAIQuestionnaire
       newsItems={newsItems}
       xaiFeature={feature}
       groupNumber={groupNumber}
+      part="merged"
     />
   );
 };

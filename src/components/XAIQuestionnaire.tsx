@@ -2,21 +2,45 @@ import Head from "next/head";
 import "survey-core/defaultV2.min.css";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
-import { questionnaire } from "@/questionnaire/questionnaire";
+import { qualificationQuestionnaire } from "@/questionnaire/qualification-questionnaire";
 import { registerMyQuestion } from "./NewsItemQuestion";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
 import NewsItem from "@/model/news-item";
+import { SurveyPart } from "@/model/survey-part";
+import { mainQuestionnaire } from "@/questionnaire/main-questionnaire";
+import { mergedQuestionnaire } from "@/questionnaire/merged-questionnaire";
 
 const XAIQuestionnaire = ({
   newsItems,
   xaiFeature,
   groupNumber,
+  part,
 }: {
   newsItems: NewsItem[];
   xaiFeature: XAIFeatureLevel;
   groupNumber: number;
+  part: SurveyPart;
 }) => {
-  console.log(`GROUP: ${groupNumber}; FEATURE: ${xaiFeature}`);
+  console.log(`PART: ${part}; GROUP: ${groupNumber}; FEATURE: ${xaiFeature};`);
+
+  let questionnaire: (
+    newsItems: NewsItem[],
+    xaiFeature: XAIFeatureLevel
+  ) => any;
+
+  switch (part) {
+    case "qualification":
+      questionnaire = qualificationQuestionnaire;
+      break;
+    case "main":
+      questionnaire = mainQuestionnaire;
+      break;
+    case "merged":
+      questionnaire = mergedQuestionnaire;
+      break;
+    default:
+      throw new Error("Invalid survey part");
+  }
 
   registerMyQuestion();
   const survey = new Model(questionnaire(newsItems, xaiFeature));

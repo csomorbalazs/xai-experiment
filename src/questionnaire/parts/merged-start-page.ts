@@ -1,4 +1,4 @@
-const startPage = {
+const mergedStartPage = {
   elements: [
     {
       maxWidth: "900px",
@@ -39,4 +39,4 @@ const startPage = {
   ],
 };
 
-export default startPage;
+export default mergedStartPage;
