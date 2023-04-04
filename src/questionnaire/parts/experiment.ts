@@ -28,6 +28,7 @@ const getPagesForNewsItem = (
       ],
     },
     {
+      name: "article-with-xai",
       title,
       description,
       elements: [
@@ -59,6 +60,7 @@ const getPagesForNewsItem = (
       ],
     },
     {
+      name: "control-question",
       title,
       description,
       elements: [
@@ -120,6 +122,20 @@ const getPagesForNewsItem = (
               value: "explanations-comprehensible-and-help-assess",
             },
           ],
+        },
+      ],
+    },
+    {
+      // show warning if control question was answered incorrectly
+      name: "control-question-warning",
+      visibleIf: `{newsitem.${newsItem.id}.control-question} != 'correct'`,
+      elements: [
+        {
+          type: "html",
+          maxWidth: "900px",
+          html: `<div>
+          <b>Attention</b>: you entered an incorrect answer to the control question! In order to receive the <b>bonus of 5 €</b> you need to answer at least <b>5 control questions correctly!</b> Please read the news items carefully.
+          </div>`,
         },
       ],
     },

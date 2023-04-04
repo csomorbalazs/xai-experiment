@@ -45,6 +45,19 @@ const XAIQuestionnaire = ({
   registerMyQuestion();
   const survey = new Model(questionnaire(newsItems, xaiFeature));
 
+  survey.onCurrentPageChanging.add((_sender, options) => {
+    if (
+      [
+        "article-with-xai",
+        "control-question",
+        "control-question-warning",
+      ].includes(options.oldCurrentPage.name) &&
+      options.isPrevPage
+    ) {
+      options.allow = false;
+    }
+  });
+
   survey.onCurrentPageChanged.add((sender, options) => {
     if (options.oldCurrentPage.name === "you-are-ready" && options.isPrevPage) {
       sender.setValue("understand-task", undefined);
@@ -95,6 +108,8 @@ const XAIQuestionnaire = ({
         formData[key] = result.data[key];
       }
     }
+
+    console.log(formData);
 
     const options = {
       method: "POST",
