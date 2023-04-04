@@ -95,8 +95,9 @@ const XAIQuestionnaire = ({
           "input[name=x-crowdee-mode]"
         ) as HTMLInputElement
       )?.value,
-      "METADATA.GROUP": groupNumber,
       "METADATA.FEATURE": xaiFeature,
+      "METADATA.GROUP": groupNumber,
+      "METADATA.PART": part,
       POINTS: result.getCorrectAnswerCount(),
     };
 
