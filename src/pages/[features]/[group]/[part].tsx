@@ -4,13 +4,13 @@ import { SurveyPart } from "@/model/survey-part";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
 const Home = ({
-  part,
-  group,
   features,
+  group,
+  part,
 }: {
-  part: SurveyPart;
-  group: string;
   features: XAIFeatureLevel;
+  group: string;
+  part: SurveyPart;
 }) => {
   // parse group number from group string
   const groupNumber = parseInt(group.split("-")[1]);
@@ -29,21 +29,23 @@ const Home = ({
 export default Home;
 
 export const getStaticPaths = async () => {
-  const parts = ["qualification", "main"];
-  const groups = [2].map((group) => `group-${group}`);
   const features = ["basic", "salient", "explanations"];
+  const groups = [2].map((group) => `group-${group}`);
+  const parts = ["qualification", "main"];
 
-  const paths = parts.flatMap((part) =>
-    groups.flatMap((group) =>
-      features.map((features) => ({
-        params: {
-          part,
-          group,
-          features,
-        },
-      }))
-    )
-  );
+  const paths = features.flatMap((features) => {
+    return groups.flatMap((group) => {
+      return parts.map((part) => {
+        return {
+          params: {
+            features,
+            group,
+            part,
+          },
+        };
+      });
+    });
+  });
 
   return { paths, fallback: false };
 };
@@ -52,15 +54,15 @@ export const getStaticProps = async ({
   params,
 }: {
   params: {
-    group: string;
     features: string;
+    group: string;
     part: string;
   };
 }) => {
   return {
     props: {
-      group: params.group,
       features: params.features,
+      group: params.group,
       part: params.part,
     },
   };

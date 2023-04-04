@@ -35,20 +35,20 @@ const Home = () => {
         >
           <li>
             Basic:{" "}
-            <Link href="/qualification/basic/group-2">Qualification</Link> -{" "}
-            <Link href="/main/basic/group-2">Main</Link>
+            <Link href="/basic/group-2/qualification">Qualification</Link> -{" "}
+            <Link href="/basic/group-2/main">Main</Link>
           </li>
           <li>
             Salient features:{" "}
-            <Link href="/qualification/salient/group-2">Qualification</Link> -{" "}
-            <Link href="/main/salient/group-2">Main</Link>
+            <Link href="/salient/group-2/qualification">Qualification</Link> -{" "}
+            <Link href="/salient/group-2/main">Main</Link>
           </li>
           <li>
             Natural language explanation:{" "}
-            <Link href="/qualification/explanations/group-2">
+            <Link href="/explanations/group-2/qualification">
               Qualification
             </Link>{" "}
-            - <Link href="/main/explanations/group-2">Main</Link>
+            - <Link href="/explanations/group-2/main">Main</Link>
           </li>
           <li>
             Random:{" "}
@@ -73,25 +73,25 @@ const Home = () => {
         >
           <li>
             Basic:{" "}
-            <Link href="/qualification/basic/group-2?experimentOnly=true">
+            <Link href="/basic/group-2/qualification?experimentOnly=true">
               Qualification
             </Link>{" "}
-            - <Link href="/main/basic/group-2?experimentOnly=true">Main</Link>
+            - <Link href="/basic/group-2/main?experimentOnly=true">Main</Link>
           </li>
           <li>
             Salient features:{" "}
-            <Link href="/qualification/salient/group-2?experimentOnly=true">
+            <Link href="/salient/group-2/qualification?experimentOnly=true">
               Qualification
             </Link>{" "}
-            - <Link href="/main/salient/group-2?experimentOnly=true">Main</Link>
+            - <Link href="/salient/group-2/main?experimentOnly=true">Main</Link>
           </li>
           <li>
             Natural language explanation:{" "}
-            <Link href="/qualification/explanations/group-2?experimentOnly=true">
+            <Link href="/explanations/group-2/qualification?experimentOnly=true">
               Qualification
             </Link>{" "}
             -{" "}
-            <Link href="/main/explanations/group-2?experimentOnly=true">
+            <Link href="/explanations/group-2/main?experimentOnly=true">
               Main
             </Link>
           </li>
