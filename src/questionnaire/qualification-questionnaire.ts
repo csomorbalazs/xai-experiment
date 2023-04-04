@@ -18,6 +18,10 @@ export const qualificationQuestionnaire = (
   const urlParams = new URLSearchParams(window.location.search);
   const experimentOnly = urlParams.get("experimentOnly") === "true";
 
+  const allControlQuestionsCorrectExpression = newsItems
+    .map((item) => `{newsitem.${item.id}.control-question} = 'correct'`)
+    .join(" and ");
+
   const questionnaire = {
     firstPageIsStarted: true,
     showPageNumbers: false,
@@ -33,9 +37,33 @@ export const qualificationQuestionnaire = (
       youAreReady,
       ...experimentPages(newsItems, xaiFeatures),
     ],
+    completedHtmlOnCondition: [
+      {
+        expression: allControlQuestionsCorrectExpression,
+        html: `<div style="max-width: 900px; margin: 0 auto;">
+        <p>
+        Thank you for taking part in the qualification job! You have answered both control questions correctly and can take part in the main job.
+        </p>
+        </br>
+        <p>
+        You can close this Tab now.
+        </p>
+        </div>`,
+      },
+    ],
+    completedHtml: `<div style="max-width: 900px; margin: 0 auto;">
+    <p>
+    Thank you for taking part in the qualification job! Unfortunately, you have not paid enough attention to the control questions and you are not qualified for the main job.
+    </p>
+    </br>
+    <p>
+    You can close this Tab now.
+    </p>
+    </div>`,
   };
 
   if (experimentOnly) {
+    questionnaire.firstPageIsStarted = false;
     questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
   }
 

@@ -42,6 +42,7 @@ export const mergedQuestionnaire = (
   };
 
   if (experimentOnly) {
+    questionnaire.firstPageIsStarted = false;
     questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
   }
 

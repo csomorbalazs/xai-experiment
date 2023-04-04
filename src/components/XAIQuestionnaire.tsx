@@ -105,14 +105,7 @@ const XAIQuestionnaire = ({
       body: new URLSearchParams(formData),
     };
 
-    fetch(submitForm.action, options)
-      .then((response) => response.text())
-      .then((html) => {
-        // replace the entire page with the response from the server
-        document.open();
-        document.write(html);
-        document.close();
-      });
+    fetch(submitForm.action, options).catch((error) => console.error(error));
   });
 
   return (

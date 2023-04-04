@@ -34,6 +34,7 @@ export const mainQuestionnaire = (
   };
 
   if (experimentOnly) {
+    questionnaire.firstPageIsStarted = false;
     questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
   }
 
