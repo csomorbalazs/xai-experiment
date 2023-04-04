@@ -133,6 +133,9 @@ const XAIQuestionnaire = ({
             ".sd-progress__text": {
               display: "none",
             },
+            ".sd-completedpage": {
+              fontWeight: "normal !important",
+            },
           }}
         />
         <div
