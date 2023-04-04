@@ -30,7 +30,7 @@ export default Home;
 
 export const getStaticPaths = async () => {
   const parts = ["qualification", "main"];
-  const groups = [1, 2].map((group) => `group-${group}`);
+  const groups = [2].map((group) => `group-${group}`);
   const features = ["basic", "salient", "explanations"];
 
   const paths = parts.flatMap((part) =>
