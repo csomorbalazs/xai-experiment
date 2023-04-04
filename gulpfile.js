@@ -8,7 +8,7 @@ gulp.task("default", () => {
       .src("./out/**/*.html", {
         ignore: ["./out/index.html", "./out/404.html"],
       })
-      // rename file from "/basic/group-1.html" to "basic-group-1.html"
+      // rename file from "/basic/group-1/main.html" to "v1-basic-group-1-main.html"
       .pipe(
         rename((path) => {
           if (path.basename === "random") {
@@ -16,8 +16,12 @@ gulp.task("default", () => {
             return;
           }
 
-          path.dirname = path.dirname.replace("/", "-");
+          path.dirname = path.dirname.replace("/", "-").replace("\\", "-");
           path.basename = path.dirname + "-" + path.basename;
+          path.basename = path.basename
+            .replace("basic", "v1-basic")
+            .replace("salient", "v2-salient")
+            .replace("explanations", "v3-explanations");
           path.dirname = "";
           path.extname = ".jsonhtml";
         })
