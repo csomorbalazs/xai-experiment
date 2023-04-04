@@ -97,6 +97,7 @@ const XAIQuestionnaire = ({
       )?.value,
       "METADATA.GROUP": groupNumber,
       "METADATA.FEATURE": xaiFeature,
+      POINTS: result.getCorrectAnswerCount(),
     };
 
     for (const key in result.data) {
