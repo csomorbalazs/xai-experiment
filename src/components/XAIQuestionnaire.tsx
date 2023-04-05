@@ -52,9 +52,23 @@ const XAIQuestionnaire = ({
   });
 
   survey.onCurrentPageChanged.add((sender, options) => {
+    // jump back to start of tutorial when user clicks "Previous"
     if (options.oldCurrentPage.name === "you-are-ready" && options.isPrevPage) {
       sender.setValue("understand-task", undefined);
       sender.currentPage = sender.getPageByName("tutorial-text");
+    }
+    // complete questionnaire if user answers incorrectly in the qualification survey
+    else if (
+      part === "qualification" &&
+      options.oldCurrentPage.name === "control-question"
+    ) {
+      const hasIncorrectAnswer = sender
+        .getQuizQuestions()
+        .some((question) => !question.isEmpty() && !question.isAnswerCorrect());
+
+      if (hasIncorrectAnswer) {
+        survey.doComplete();
+      }
     }
   });
 
