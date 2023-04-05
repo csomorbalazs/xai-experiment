@@ -46,15 +46,8 @@ const XAIQuestionnaire = ({
   const survey = new Model(questionnaire(newsItems, xaiFeature));
 
   survey.onCurrentPageChanging.add((_sender, options) => {
-    if (
-      [
-        "article-with-xai",
-        "control-question",
-        "control-question-warning",
-      ].includes(options.oldCurrentPage.name) &&
-      options.isPrevPage
-    ) {
-      options.allow = false;
+    if (options.isPrevPage) {
+      options.allow = "you-are-ready" === options.oldCurrentPage.name;
     }
   });
 
