@@ -33,7 +33,7 @@ export const mergedQuestionnaire = (
       ...informationSeekingBehaviour,
       ...tutorial(xaiFeatures),
       youAreReady,
-      ...experimentPages(newsItems, xaiFeatures),
+      ...experimentPages(newsItems, xaiFeatures, "merged"),
       almostDone,
       ...aiSystemEvaluation(xaiFeatures),
       newsDashboardEvaluation,
@@ -43,7 +43,9 @@ export const mergedQuestionnaire = (
 
   if (experimentOnly) {
     questionnaire.firstPageIsStarted = false;
-    questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
+    questionnaire.pages = [
+      ...experimentPages(newsItems, xaiFeatures, "merged"),
+    ];
   }
 
   return questionnaire;

@@ -1,10 +1,12 @@
 import { agreementLikert7 } from "@/helper/likert-scales";
 import NewsItem from "@/model/news-item";
+import { SurveyPart } from "@/model/survey-part";
 import { XAIFeatureLevel } from "@/model/xai-feature-level";
 
 const getPagesForNewsItem = (
   newsItem: NewsItem,
-  xaiFeatures: XAIFeatureLevel
+  xaiFeatures: XAIFeatureLevel,
+  part: SurveyPart
 ) => {
   const title = "Truthfulness Rating of News Items";
   const description =
@@ -125,30 +127,35 @@ const getPagesForNewsItem = (
         },
       ],
     },
-    {
-      // show warning if control question was answered incorrectly
-      name: "control-question-warning",
-      visibleIf: `{newsitem.${newsItem.id}.control-question} != 'correct'`,
-      elements: [
-        {
-          type: "html",
-          maxWidth: "900px",
-          html: `<div>
+    part === "main"
+      ? {
+          // show warning if control question was answered incorrectly
+          name: "control-question-warning",
+          visibleIf: `{newsitem.${newsItem.id}.control-question} != 'correct'`,
+          elements: [
+            {
+              type: "html",
+              maxWidth: "900px",
+              html: `<div>
           <b>Attention</b>: you entered an incorrect answer to the control question! In order to receive the <b>bonus of 5 €</b> you need to answer at least <b>5 control questions correctly!</b> Please read the news items carefully.
           </div>`,
+            },
+          ],
+        }
+      : {
+          visibleIf: "false",
         },
-      ],
-    },
   ];
 };
 
 const experimentPages = (
   newsItems: NewsItem[],
-  xaiFeatures: XAIFeatureLevel
+  xaiFeatures: XAIFeatureLevel,
+  part: SurveyPart
 ) => {
   return [
     ...newsItems.flatMap((newsItem) =>
-      getPagesForNewsItem(newsItem as any, xaiFeatures)
+      getPagesForNewsItem(newsItem as any, xaiFeatures, part)
     ),
   ];
 };

@@ -25,7 +25,7 @@ export const mainQuestionnaire = (
       mainStartPage,
       ...tutorial(xaiFeatures),
       youAreReady,
-      ...experimentPages(newsItems, xaiFeatures),
+      ...experimentPages(newsItems, xaiFeatures, "main"),
       almostDone,
       ...aiSystemEvaluation(xaiFeatures),
       newsDashboardEvaluation,
@@ -58,7 +58,7 @@ export const mainQuestionnaire = (
 
   if (experimentOnly) {
     questionnaire.firstPageIsStarted = false;
-    questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
+    questionnaire.pages = [...experimentPages(newsItems, xaiFeatures, "main")];
   }
 
   return questionnaire;

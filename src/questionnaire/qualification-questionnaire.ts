@@ -31,7 +31,7 @@ export const qualificationQuestionnaire = (
       ...informationSeekingBehaviour,
       ...tutorial(xaiFeatures),
       youAreReady,
-      ...experimentPages(newsItems, xaiFeatures),
+      ...experimentPages(newsItems, xaiFeatures, "qualification"),
     ],
     completedHtmlOnCondition: [
       {
@@ -60,7 +60,9 @@ export const qualificationQuestionnaire = (
 
   if (experimentOnly) {
     questionnaire.firstPageIsStarted = false;
-    questionnaire.pages = [...experimentPages(newsItems, xaiFeatures)];
+    questionnaire.pages = [
+      ...experimentPages(newsItems, xaiFeatures, "qualification"),
+    ];
   }
 
   return questionnaire;
