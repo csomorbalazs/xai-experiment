@@ -45,9 +45,15 @@ const XAIQuestionnaire = ({
   registerMyQuestion();
   const survey = new Model(questionnaire(newsItems, xaiFeature));
 
-  survey.onCurrentPageChanging.add((_sender, options) => {
-    if (options.isPrevPage) {
-      options.allow = "you-are-ready" === options.oldCurrentPage.name;
+  survey.onAfterRenderPage.add((sender, options) => {
+    // hide "Previous" button on all pages except the "You are ready" page
+    const prevButton = document.querySelector(
+      ".sd-navigation__prev-btn"
+    ) as HTMLElement;
+
+    if (prevButton) {
+      prevButton.style.display =
+        options.page.name === "you-are-ready" ? "block" : "none";
     }
   });
 
