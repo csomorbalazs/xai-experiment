@@ -8,6 +8,7 @@ import tutorial from "./parts/tutorial";
 import youAreReady from "./parts/you-are-ready";
 import NewsItem from "@/model/news-item";
 import newsDashboardEvaluation from "./parts/news-dashboard-evaluation";
+import bonusInfo from "./parts/bonus-info";
 
 export const mainQuestionnaire = (
   newsItems: NewsItem[],
@@ -30,30 +31,15 @@ export const mainQuestionnaire = (
       ...aiSystemEvaluation(xaiFeatures),
       newsDashboardEvaluation,
       demographics,
+      bonusInfo,
     ],
-    completedHtmlOnCondition: [
-      {
-        expression: `{correctAnswers} >= 5`,
-        html: `<div style="max-width: 900px; margin: 0 auto;">
+    completedHtml: `
+      <div>
         <p>
-        Thank you for taking part in the XAI experiment! Congratulations, you have answered <b>{correctAnswers} out of 6 control questions correctly</b> and you will receive a <b>bonus of 5€ within the next days</b>.
+          Loading...
         </p>
-        </br>
-        <p>
-        You can close this Tab now.
-        </p>
-        </div>`,
-      },
-    ],
-    completedHtml: `<div style="max-width: 900px; margin: 0 auto;">
-    <p>
-    Thank you for taking part in the XAI experiment! Unfortunately, you have not paid enough attention to the control questions and you will <b>not receive a bonus</b>.
-    </p>
-    </br>
-    <p>
-    You can close this Tab now.
-    </p>
-    </div>`,
+      </div>
+    `,
   };
 
   if (experimentOnly) {
