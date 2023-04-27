@@ -27,13 +27,13 @@ gulp.task("default", () => {
         })
       )
       // NextJS files are served from a different server
-      .pipe(replace('"/_next/', '"https://xai-experiment.web.app/_next/'))
+      .pipe(replace('"/_next/', '"https://xai-experiment-alt.firebaseapp.com/_next/'))
       // bringing the html to a JSON friendly format
       .pipe(replace(/>[\r\n ]+</g, "><"))
       .pipe(replace(/\\/g, "\\\\"))
       .pipe(replace(/"/g, '\\"'))
       .pipe(replace(/\t/g, "\\t"))
       .pipe(replace(/\n|\r\n/g, "\\n"))
-      .pipe(gulp.dest("./build"))
+      .pipe(gulp.dest("./jsonhtml"))
   );
 });

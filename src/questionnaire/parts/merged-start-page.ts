@@ -12,9 +12,6 @@ const mergedStartPage = {
           </p>
           </br>
           <p>
-          <b>Compensation:</b> you will receive <b>4,50€</b> when you complete the experiment.
-          </p>
-          <p>
           <b>Duration:</b> approximately <b>30 minutes</b>
           </p>
           </br>

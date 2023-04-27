@@ -186,7 +186,7 @@ const aiSystemEvaluation = (xaiLevel: XAIFeatureLevel) => {
         {
           type: "boolean",
           name: "journalist2",
-          title: "Are a journalist by profession?",
+          title: "Do you have a journalistic background?",
           valueTrue: "Yes",
           valueFalse: "No",
           renderAs: "radio",

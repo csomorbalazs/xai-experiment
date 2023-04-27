@@ -13,11 +13,14 @@ const Home = () => {
 
   // if they are not, generate random group number and feature
   if (groupNumber === 0 || feature === null) {
-    // generate random group number (1 or 2)
-    groupNumber = Math.random() < 0.5 ? 1 : 2;
+    groupNumber = 2;
 
-    // get randomized feature ("salient" or "explanations")
-    feature = Math.random() < 0.5 ? "salient" : "explanations";
+    // get randomized feature ("basic" or "salient" or "explanations")
+    // pick a random number between 0 and 2
+    const randomFeatureNumber = Math.floor(Math.random() * 3);
+    feature = ["basic", "salient", "explanations"][
+      randomFeatureNumber
+    ] as XAIFeatureLevel;
 
     // store group number and feature in local storage
     localStorage.setItem("xai-experiment.group", groupNumber.toString());
