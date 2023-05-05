@@ -4,7 +4,7 @@ const expectations = {
   title:
     "Survey Part 1: Your General Thoughts about using Artificial Intelligence (AI) for Fake News Detection",
   description:
-    "In the following several questions will be asked about your general perception of Artificial Intelligence and its use for detecting false content in news items. Please answer the following questions as truthfully as possible.",
+    "In the following several questions you will be asked about your general perception of Artificial Intelligence and its use for detecting false content in news items. Please answer the following questions as truthfully as possible.",
   elements: [
     {
       type: "matrix",
@@ -25,11 +25,11 @@ const expectations = {
         },
         {
           value: "trust-ai",
-          text: "In general do you trust AI?",
+          text: "In general, I trust AI",
         },
         {
           value: "sceptical-about-ai",
-          text: "In general, are you sceptical about AI?",
+          text: "In general, I am sceptical about AI",
         },
         {
           value: "rely-on-ai-for-fake-news-detection",
