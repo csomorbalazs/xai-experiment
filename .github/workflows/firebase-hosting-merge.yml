@@ -6,6 +6,14 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+    paths:
+      - "public/**"
+      - "src/**"
+      - "package.json"
+      - "yarn.lock"
+      - ".firebaserc"
+      - "firebase.json"
+      - ".github/workflows/firebase-hosting-merge.yml"
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
