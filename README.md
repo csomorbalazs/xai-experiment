@@ -1,6 +1,6 @@
 # Evaluation of Explainability Features in the Fake News Detection Context
 
-This repository contains the implementation of a web application for the Master's Thesis "Evaluation of Explainability Features in the Fake News Detection Context", along with scripts for the data processing and analysis.
+This repository contains the implementation of a web application for the Master's Thesis "Evaluation of Explainability Features in the Fake News Detection Context", along with scripts for the data processing and analysis. See questionnare demo at [https://xai-experiment.web.app/](https://xai-experiment.web.app/).
 
 ## Web App implementation
 
