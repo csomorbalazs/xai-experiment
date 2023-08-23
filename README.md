@@ -4,7 +4,7 @@ This repository contains the implementation of a web application for the Master'
 
 ## Web App implementation
 
-![Overview of implementation](./architecture.png)
+![Overview of implementation](./documentation/architecture.png)
 
 ### Built With
 
@@ -17,4 +17,4 @@ This repository contains the implementation of a web application for the Master'
 
 See the [Data_Cleaning_XAI.ipynb](./data-analysis/Data_Cleaning_XAI.ipynb) notebook for data cleaning and the [Data_Analysis_XAI.ipynb](./data-analysis/Data_Analysis_XAI.ipynb) notebook for data analysis.
 
-Raw survey data is available in the [data-analysis/data/raw](./data-analysis/data/raw) folder and news items can be found in the [preprocessing/news-items.csv](./preprocessing/news-items.csv) file.
+Raw survey data is available in the [data-analysis/data/raw](./data-analysis/data/raw) folder and news items can be found in the [news-items.csv](./preprocessing/news-items.csv) file.
